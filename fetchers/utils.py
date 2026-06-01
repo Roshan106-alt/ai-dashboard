@@ -134,11 +134,9 @@ def update_frequency_timestamp(data: Dict[str, Any], frequency: str):
     data["meta"]["frequency_last_run"][frequency] = datetime.utcnow().isoformat() + "Z"
 
 
-def print_summary(data: Dict[str, Any], frequency: str):
-    """Print a summary of what was updated."""
+def print_summary(data, frequency):
     errors = data.get("errors", [])
     recent_errors = [e for e in errors if frequency in str(e.get("timestamp", ""))]
-    
     print(f"\n{'='*60}")
     print(f"Update complete for {frequency.upper()} tier")
     print(f"Time: {data['meta']['last_update']}")
