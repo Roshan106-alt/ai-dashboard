@@ -46,30 +46,22 @@ def fetch_google_trends():
 
 
 def fetch_ai_stock_prices():
-    """Fetch current prices for NVDA, MSFT, GOOGL, META, AMZN using yfinance."""
     try:
         import yfinance as yf
-        
         print("  Fetching AI stock prices...")
         tickers = ['NVDA', 'MSFT', 'GOOGL', 'META', 'AMZN']
-        
         prices = {}
         for ticker in tickers:
             try:
-                data = yf.download(ticker, period='5d', progress=False)
-                if len(data) > 0:
-                    current_price = data['Close'].iloc[-1]
-                    prev_price = data['Close'].iloc[-2] if len(data) > 1 else current_price
-                    change = calculate_pct_change(current_price, prev_price)
-                    prices[ticker] = {
-                        "price": round(current_price, 2),
-                        "change_pct": change
-                    }
+                stock = yf.Ticker(ticker)
+                info = stock.fast_info
+                price = round(float(info.last_price), 2)
+                prev = round(float(info.previous_close), 2)
+                change = calculate_pct_change(price, prev)
+                prices[ticker] = {"price": price, "change_pct": change}
             except Exception as e:
                 print(f"    {ticker}: Error - {str(e)}")
-        
         return prices if prices else None
-    
     except Exception as e:
         print(f"  Error: {str(e)}")
         return None
