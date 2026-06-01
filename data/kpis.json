@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-06-01T14:09:23.940930Z",
+    "last_update": "2026-06-01T14:31:41.781028Z",
     "frequency_last_run": {
       "daily": "2026-06-01T14:06:18.415556Z",
-      "weekly": "2026-06-01T14:07:11.607034Z",
+      "weekly": "2026-06-01T14:31:41.780979Z",
       "monthly": "2026-06-01T14:08:02.360507Z",
       "quarterly": "2026-06-01T14:09:23.940879Z"
     }
@@ -69,16 +69,16 @@
       "status": "pending"
     },
     "github_ai_stars_top10": {
-      "value": null,
+      "value": 1310090,
       "unit": "stars",
-      "timestamp": null,
+      "timestamp": "2026-06-01T14:31:38.148829Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "huggingface_downloads_top20": {
       "value": 855060290,
       "unit": "downloads",
-      "timestamp": "2026-06-01T14:07:08.141457Z",
+      "timestamp": "2026-06-01T14:31:38.277986Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -92,7 +92,7 @@
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-06-01T14:07:11.607025Z",
+      "timestamp": "2026-06-01T14:31:41.780967Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -295,6 +295,11 @@
       "kpi": "nvidia_dc_revenue",
       "error": "SEC EDGAR fetch incomplete",
       "timestamp": "2026-06-01T14:09:23.940821Z"
+    },
+    {
+      "kpi": "ai_job_postings",
+      "error": "Failed to fetch (Indeed blocks scrapers)",
+      "timestamp": "2026-06-01T14:31:41.576891Z"
     }
   ]
 }
