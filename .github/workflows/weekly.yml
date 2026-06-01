@@ -1,0 +1,43 @@
+name: Weekly KPI Fetcher
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  fetch-kpis:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run weekly fetcher
+      env:
+        FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      run: python fetchers/weekly.py
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        if [[ -n $(git status -s) ]]; then
+          git add data/kpis.json
+          git commit -m "Weekly KPI update: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Roshan106-alt/ai-dashboard.git
+        else
+          echo "No changes to commit"
+        fi
