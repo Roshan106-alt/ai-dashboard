@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-01T13:47:17.527449Z",
+    "last_update": "2026-06-01T14:06:18.415591Z",
     "frequency_last_run": {
-      "daily": "2026-06-01T13:47:17.527412Z",
+      "daily": "2026-06-01T14:06:18.415556Z",
       "weekly": null,
       "monthly": null,
       "quarterly": null
@@ -53,11 +53,11 @@
     },
     "api_pricing_snapshot": {
       "value": {
-        "last_checked": "2026-06-01T13:47:14.271701Z",
+        "last_checked": "2026-06-01T14:06:15.225759Z",
         "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
       },
       "unit": "",
-      "timestamp": "2026-06-01T13:47:14.273058Z",
+      "timestamp": "2026-06-01T14:06:15.227029Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -191,6 +191,21 @@
       "kpi": "aa_inference_speed",
       "error": "Failed to fetch",
       "timestamp": "2026-06-01T13:47:17.527399Z"
+    },
+    {
+      "kpi": "google_trends_ai",
+      "error": "Failed to fetch (pytrends error)",
+      "timestamp": "2026-06-01T14:06:13.670710Z"
+    },
+    {
+      "kpi": "ai_stock_prices",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T14:06:14.922780Z"
+    },
+    {
+      "kpi": "aa_inference_speed",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T14:06:18.415543Z"
     }
   ]
 }
