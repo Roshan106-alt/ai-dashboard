@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trade Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --border: #e0e0e0;
+            --text: #1a1a1a;
+            --muted: #666666;
+            --faint: #999999;
+            --green: #0a7c52;
+            --red: #c0392b;
+            --blue: #1a4fa0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a; --card: #2a2a2a; --border: #444;
+                --text: #e8e8e8; --muted: #b8b8b8; --faint: #888;
+                --green: #3ecf8e; --red: #f07070; --blue: #6ab0f5;
+            }
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 2rem 1rem; }
+        .wrap { max-width: 1400px; margin: 0 auto; }
+        header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .meta { font-size: 0.85rem; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; display: inline-block; margin-right: 6px; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+        .tab { padding: 0.6rem 1rem; border: none; background: transparent; color: var(--muted); cursor: pointer; font-size: 0.9rem; font-weight: 500; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+        .tab.on { color: var(--blue); border-bottom-color: var(--blue); }
+        .pane { display: none; }
+        .pane.on { display: block; animation: fade 0.3s; }
+        @keyframes fade { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; transition: box-shadow 0.2s; }
+        .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .card.dim { opacity: 0.55; }
+        .label { font-size: 0.7rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; margin-bottom: 0.5rem; }
+        .val { font-size: 1.7rem; font-weight: 700; margin-bottom: 0.25rem; word-break: break-word; }
+        .val.empty { font-size: 1rem; color: var(--faint); }
+        .unit { font-size: 0.75rem; color: var(--muted); }
+        .chg { font-size: 0.85rem; margin-top: 0.4rem; }
+        .chg.up { color: var(--green); }
+        .chg.dn { color: var(--red); }
+        .ts { font-size: 0.7rem; color: var(--faint); margin-top: 0.4rem; }
+        .errs { background: var(--card); border: 1px solid var(--red); border-radius: 8px; padding: 1rem; margin-top: 2rem; }
+        .errs h3 { color: var(--red); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .err { font-size: 0.85rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+        .err:last-child { border: none; }
+        .err b { color: var(--red); }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>🤖 AI Trade Dashboard</h1>
+        <div class="meta">
+            <span><span class="dot"></span><span id="ts">Loading...</span></span>
+            <span id="count"></span>
+            <span id="ercount"></span>
+        </div>
+    </header>
+    <div class="tabs">
+        <button class="tab on" onclick="show('supply',this)">Supply Chain</button>
+        <button class="tab" onclick="show('adoption',this)">Adoption</button>
+        <button class="tab" onclick="show('economics',this)">Economics</button>
+        <button class="tab" onclick="show('infra',this)">Infrastructure</button>
+        <button class="tab" onclick="show('market',this)">Market</button>
+    </div>
+    <div id="supply" class="pane on"><div class="grid" id="g-supply"></div></div>
+    <div id="adoption" class="pane"><div class="grid" id="g-adoption"></div></div>
+    <div id="economics" class="pane"><div class="grid" id="g-economics"></div></div>
+    <div id="infra" class="pane"><div class="grid" id="g-infra"></div></div>
+    <div id="market" class="pane"><div class="grid" id="g-market"></div></div>
+    <div id="err-box"></div>
+</div>
+<script>
+const CATS = {
+    supply:   ['tsmc_monthly_revenue','fred_semi_index','tsmc_3nm_wafer_price','hbm_spot_price','cowos_utilization','ai_server_backlog'],
+    adoption: ['google_trends_ai','github_ai_stars_top10','huggingface_downloads_top20','ai_job_postings','openrouter_throughput_status'],
+    economics:['api_pricing_snapshot','api_pricing_log','aa_inference_speed_tps','inferencemax_efficiency'],
+    infra:    ['hyperscaler_capex_guidance','hyperscaler_capex_reported','cloud_revenue_growth','nvidia_dc_revenue'],
+    market:   ['stock_nvda','stock_msft','stock_googl','stock_meta','stock_amzn']
+};
+
+function fmt(v) {
+    if (v === null || v === undefined) return null;
+    if (typeof v === 'number') {
+        if (v > 1e6) return (v/1e6).toFixed(1)+'M';
+        if (v > 1e3) return (v/1e3).toFixed(1)+'K';
+        return v.toLocaleString(undefined,{maximumFractionDigits:2});
+    }
+    if (typeof v === 'object') return 'See details';
+    return String(v);
+}
+
+function fmtName(k) {
+    return k.split('_').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ');
+}
+
+function card(name, kpi) {
+    const v = fmt(kpi.value);
+    const empty = v === null;
+    const chg = kpi.change_pct;
+    const ts = kpi.timestamp ? new Date(kpi.timestamp).toLocaleDateString() : '';
+    return `<div class="card ${empty?'dim':''}">
+        <div class="label">${fmtName(name)}</div>
+        <div class="val ${empty?'empty':''}">${empty?'Pending':v}</div>
+        <div class="unit">${kpi.unit||''}</div>
+        ${chg!=null?`<div class="chg ${chg>0?'up':'dn'}">${chg>0?'↑':'↓'} ${Math.abs(chg)}%</div>`:''}
+        ${ts?`<div class="ts">Updated ${ts}</div>`:''}
+    </div>`;
+}
+
+async function load() {
+    try {
+        const r = await fetch('data/kpis.json?t='+Date.now());
+        if (!r.ok) throw new Error('Not found');
+        const d = await r.json();
+
+        document.getElementById('ts').textContent = 'Last update: '+new Date(d.meta.last_update).toLocaleString();
+        document.getElementById('count').textContent = 'KPIs: '+Object.keys(d.kpis).length;
+        document.getElementById('ercount').textContent = 'Errors: '+d.errors.length;
+
+        Object.entries(CATS).forEach(([tab, keys]) => {
+            document.getElementById('g-'+tab).innerHTML = keys.map(k => d.kpis[k] ? card(k, d.kpis[k]) : '').join('');
+        });
+
+        if (d.errors.length) {
+            document.getElementById('err-box').innerHTML = `<div class="errs"><h3>⚠ Recent Errors</h3>${d.errors.slice(-5).map(e=>`<div class="err"><b>${e.kpi}</b>: ${e.error}</div>`).join('')}</div>`;
+        }
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+function show(id, btn) {
+    document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
+    document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+    document.getElementById(id).classList.add('on');
+    btn.classList.add('on');
+}
+
+load();
+setInterval(load, 5*60*1000);
+</script>
+</body>
+</html>
