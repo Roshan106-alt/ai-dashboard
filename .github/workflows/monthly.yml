@@ -38,8 +38,7 @@ jobs:
         if [[ -n $(git status -s) ]]; then
           git add data/kpis.json
           git commit -m "Daily KPI update: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git push https://${{ github.token }}@github.com/${{ github.repository }}.git
+          git push origin main
         else
           echo "No changes to commit"
         fi
