@@ -100,36 +100,27 @@ def fetch_api_pricing():
 
 
 def fetch_artificial_analysis_speed():
-    """Fetch inference speed metrics from Artificial Analysis free API."""
     try:
+        import os
         print("  Fetching Artificial Analysis speed metrics...")
-        
-        response = http_get('https://artificialanalysis.ai/api/v2/models', timeout=15)
-        
+        aa_key = os.getenv('AA_API_KEY')
+        if not aa_key:
+            print("    AA_API_KEY not set")
+            return None
+        response = http_get(
+            'https://artificialanalysis.ai/api/v2/models',
+            headers={"x-api-key": aa_key},
+            timeout=15
+        )
         if not response:
             return None
-        
         data = response.json()
-        
         if 'data' not in data or len(data['data']) == 0:
             return None
-        
-        # Get top 5 models by output speed
-        models = sorted(
-            data['data'],
-            key=lambda x: x.get('median_output_tokens_per_second', 0),
-            reverse=True
-        )[:5]
-        
+        models = sorted(data['data'], key=lambda x: x.get('median_output_tokens_per_second', 0), reverse=True)[:5]
         top_speed = safe_float(models[0].get('median_output_tokens_per_second', 0))
         avg_speed = safe_float(sum(m.get('median_output_tokens_per_second', 0) for m in models) / len(models))
-        
-        return {
-            "top_model_speed_tps": round(top_speed, 1),
-            "avg_top5_speed_tps": round(avg_speed, 1),
-            "models_tracked": len(data['data'])
-        }
-    
+        return {"top_model_speed_tps": round(top_speed, 1), "avg_top5_speed_tps": round(avg_speed, 1), "models_tracked": len(data['data'])}
     except Exception as e:
         print(f"  Error: {str(e)}")
         return None
