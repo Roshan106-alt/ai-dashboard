@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-01T06:00:00Z",
+    "last_update": "2026-06-01T13:47:17.527449Z",
     "frequency_last_run": {
-      "daily": null,
+      "daily": "2026-06-01T13:47:17.527412Z",
       "weekly": null,
       "monthly": null,
       "quarterly": null
@@ -10,11 +10,11 @@
   },
   "kpis": {
     "google_trends_ai": {
-      "value": null,
+      "value": 32,
       "unit": "index (0-100)",
-      "timestamp": null,
+      "timestamp": "2026-06-01T13:47:12.335981Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "stock_nvda": {
       "value": null,
@@ -52,11 +52,14 @@
       "status": "pending"
     },
     "api_pricing_snapshot": {
-      "value": null,
-      "unit": "snapshot",
-      "timestamp": null,
+      "value": {
+        "last_checked": "2026-06-01T13:47:14.271701Z",
+        "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
+      },
+      "unit": "",
+      "timestamp": "2026-06-01T13:47:14.273058Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "aa_inference_speed_tps": {
       "value": null,
@@ -178,5 +181,16 @@
       "status": "pending"
     }
   },
-  "errors": []
+  "errors": [
+    {
+      "kpi": "ai_stock_prices",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T13:47:13.863563Z"
+    },
+    {
+      "kpi": "aa_inference_speed",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T13:47:17.527399Z"
+    }
+  ]
 }
