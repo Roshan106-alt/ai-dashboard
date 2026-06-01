@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "last_update": "2026-06-01T06:00:00Z",
+    "frequency_last_run": {
+      "daily": null,
+      "weekly": null,
+      "monthly": null,
+      "quarterly": null
+    }
+  },
+  "kpis": {
+    "google_trends_ai": {
+      "value": null,
+      "unit": "index (0-100)",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "stock_nvda": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "stock_msft": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "stock_googl": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "stock_meta": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "stock_amzn": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "api_pricing_snapshot": {
+      "value": null,
+      "unit": "snapshot",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "aa_inference_speed_tps": {
+      "value": null,
+      "unit": "tokens/sec",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "github_ai_stars_top10": {
+      "value": null,
+      "unit": "stars",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "huggingface_downloads_top20": {
+      "value": null,
+      "unit": "downloads",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "ai_job_postings": {
+      "value": null,
+      "unit": "postings",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "openrouter_throughput_status": {
+      "value": null,
+      "unit": "status",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "tsmc_monthly_revenue": {
+      "value": null,
+      "unit": "NT$ billion",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "tsmc_3nm_wafer_price": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "hbm_spot_price": {
+      "value": null,
+      "unit": "USD",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "cowos_utilization": {
+      "value": null,
+      "unit": "%",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "fred_semi_index": {
+      "value": null,
+      "unit": "index",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "api_pricing_log": {
+      "value": null,
+      "unit": "snapshot",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "inferencemax_efficiency": {
+      "value": null,
+      "unit": "status",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "hyperscaler_capex_guidance": {
+      "value": null,
+      "unit": "USD billion",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "nvidia_dc_revenue": {
+      "value": null,
+      "unit": "USD billion",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "hyperscaler_capex_reported": {
+      "value": null,
+      "unit": "USD billion",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "cloud_revenue_growth": {
+      "value": null,
+      "unit": "% YoY",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    },
+    "ai_server_backlog": {
+      "value": null,
+      "unit": "status",
+      "timestamp": null,
+      "change_pct": null,
+      "status": "pending"
+    }
+  },
+  "errors": []
+}
