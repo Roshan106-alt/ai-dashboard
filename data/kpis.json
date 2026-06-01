@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-06-01T14:06:18.415591Z",
+    "last_update": "2026-06-01T14:07:11.607068Z",
     "frequency_last_run": {
       "daily": "2026-06-01T14:06:18.415556Z",
-      "weekly": null,
+      "weekly": "2026-06-01T14:07:11.607034Z",
       "monthly": null,
       "quarterly": null
     }
@@ -76,11 +76,11 @@
       "status": "pending"
     },
     "huggingface_downloads_top20": {
-      "value": null,
+      "value": 855060290,
       "unit": "downloads",
-      "timestamp": null,
+      "timestamp": "2026-06-01T14:07:08.141457Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "ai_job_postings": {
       "value": null,
@@ -90,11 +90,11 @@
       "status": "pending"
     },
     "openrouter_throughput_status": {
-      "value": null,
-      "unit": "status",
-      "timestamp": null,
+      "value": "live",
+      "unit": "",
+      "timestamp": "2026-06-01T14:07:11.607025Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "tsmc_monthly_revenue": {
       "value": null,
@@ -206,6 +206,16 @@
       "kpi": "aa_inference_speed",
       "error": "Failed to fetch",
       "timestamp": "2026-06-01T14:06:18.415543Z"
+    },
+    {
+      "kpi": "github_ai_repos",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T14:07:07.995202Z"
+    },
+    {
+      "kpi": "ai_job_postings",
+      "error": "Failed to fetch (Indeed blocks scrapers)",
+      "timestamp": "2026-06-01T14:07:11.414858Z"
     }
   ]
 }
