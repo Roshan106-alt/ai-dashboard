@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-06-01T14:07:11.607068Z",
+    "last_update": "2026-06-01T14:08:02.360550Z",
     "frequency_last_run": {
       "daily": "2026-06-01T14:06:18.415556Z",
       "weekly": "2026-06-01T14:07:11.607034Z",
-      "monthly": null,
+      "monthly": "2026-06-01T14:08:02.360507Z",
       "quarterly": null
     }
   },
@@ -132,11 +132,25 @@
       "status": "pending"
     },
     "api_pricing_log": {
-      "value": null,
+      "value": {
+        "OpenAI": {
+          "url": "https://openai.com/api/pricing/",
+          "status": "accessible",
+          "checked_at": "2026-06-01T14:07:57.680366Z"
+        },
+        "Anthropic": {
+          "status": "error"
+        },
+        "Google": {
+          "url": "https://ai.google.dev/pricing",
+          "status": "accessible",
+          "checked_at": "2026-06-01T14:08:01.876229Z"
+        }
+      },
       "unit": "snapshot",
-      "timestamp": null,
+      "timestamp": "2026-06-01T14:08:01.877069Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "inferencemax_efficiency": {
       "value": null,
@@ -216,6 +230,21 @@
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
       "timestamp": "2026-06-01T14:07:11.414858Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-01T14:07:56.348018Z"
+    },
+    {
+      "kpi": "fred_semi_index",
+      "error": "API key missing or error",
+      "timestamp": "2026-06-01T14:07:57.396479Z"
+    },
+    {
+      "kpi": "inferencemax",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T14:08:02.360492Z"
     }
   ]
 }
