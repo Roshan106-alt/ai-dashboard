@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-01T14:08:02.360550Z",
+    "last_update": "2026-06-01T14:09:23.940930Z",
     "frequency_last_run": {
       "daily": "2026-06-01T14:06:18.415556Z",
       "weekly": "2026-06-01T14:07:11.607034Z",
       "monthly": "2026-06-01T14:08:02.360507Z",
-      "quarterly": null
+      "quarterly": "2026-06-01T14:09:23.940879Z"
     }
   },
   "kpis": {
@@ -174,25 +174,65 @@
       "status": "pending"
     },
     "hyperscaler_capex_reported": {
-      "value": null,
-      "unit": "USD billion",
-      "timestamp": null,
+      "value": {
+        "MSFT": {
+          "status": "requires_10q_parsing",
+          "note": "See MSFT investor relations for latest 10-Q"
+        },
+        "AMZN": {
+          "status": "requires_10q_parsing",
+          "note": "See AMZN investor relations for latest 10-Q"
+        },
+        "GOOGL": {
+          "status": "requires_10q_parsing",
+          "note": "See GOOGL investor relations for latest 10-Q"
+        },
+        "META": {
+          "status": "requires_10q_parsing",
+          "note": "See META investor relations for latest 10-Q"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-01T14:09:23.940844Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "cloud_revenue_growth": {
-      "value": null,
-      "unit": "% YoY",
-      "timestamp": null,
+      "value": {
+        "AWS": {
+          "status": "requires_amzn_10q"
+        },
+        "Azure": {
+          "status": "requires_msft_10q"
+        },
+        "Google Cloud": {
+          "status": "requires_googl_10q"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-01T14:09:23.940855Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "ai_server_backlog": {
-      "value": null,
-      "unit": "status",
-      "timestamp": null,
+      "value": {
+        "DELL": {
+          "status": "check_earnings_call",
+          "note": "Monitor DELL earnings calls for backlog commentary"
+        },
+        "SMCI": {
+          "status": "check_earnings_call",
+          "note": "Monitor SMCI earnings calls for backlog commentary"
+        },
+        "HPE": {
+          "status": "check_earnings_call",
+          "note": "Monitor HPE earnings calls for backlog commentary"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-01T14:09:23.940867Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     }
   },
   "errors": [
@@ -245,6 +285,16 @@
       "kpi": "inferencemax",
       "error": "Failed to fetch",
       "timestamp": "2026-06-01T14:08:02.360492Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-01T14:09:20.569593Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-01T14:09:23.940821Z"
     }
   ]
 }
