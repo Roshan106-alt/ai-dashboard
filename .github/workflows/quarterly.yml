@@ -29,6 +29,7 @@ jobs:
     - name: Run quarterly fetcher
       env:
         FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        AA_API_KEY: ${{ secrets.AA_API_KEY }}
       run: python fetchers/quarterly.py
     
     - name: Commit and push changes
