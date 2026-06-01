@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-01T14:32:35.466318Z",
+    "last_update": "2026-06-01T14:48:10.789469Z",
     "frequency_last_run": {
-      "daily": "2026-06-01T14:06:18.415556Z",
+      "daily": "2026-06-01T14:48:10.789416Z",
       "weekly": "2026-06-01T14:31:41.780979Z",
       "monthly": "2026-06-01T14:32:35.466269Z",
       "quarterly": "2026-06-01T14:09:23.940879Z"
@@ -17,47 +17,47 @@
       "status": "ok"
     },
     "stock_nvda": {
-      "value": null,
+      "value": 220.54,
       "unit": "USD",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+      "timestamp": "2026-06-01T14:48:06.840396Z",
+      "change_pct": 3.79,
+      "status": "ok"
     },
     "stock_msft": {
-      "value": null,
+      "value": 462.05,
       "unit": "USD",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+      "timestamp": "2026-06-01T14:48:06.840416Z",
+      "change_pct": 2.68,
+      "status": "ok"
     },
     "stock_googl": {
-      "value": null,
+      "value": 376.4,
       "unit": "USD",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+      "timestamp": "2026-06-01T14:48:06.840423Z",
+      "change_pct": -1.12,
+      "status": "ok"
     },
     "stock_meta": {
-      "value": null,
+      "value": 612.81,
       "unit": "USD",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+      "timestamp": "2026-06-01T14:48:06.840427Z",
+      "change_pct": -3.06,
+      "status": "ok"
     },
     "stock_amzn": {
-      "value": null,
+      "value": 263.8,
       "unit": "USD",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+      "timestamp": "2026-06-01T14:48:06.840432Z",
+      "change_pct": -2.48,
+      "status": "ok"
     },
     "api_pricing_snapshot": {
       "value": {
-        "last_checked": "2026-06-01T14:06:15.225759Z",
+        "last_checked": "2026-06-01T14:48:07.353482Z",
         "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
       },
       "unit": "",
-      "timestamp": "2026-06-01T14:06:15.227029Z",
+      "timestamp": "2026-06-01T14:48:07.354962Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -315,6 +315,16 @@
       "kpi": "inferencemax",
       "error": "Failed to fetch",
       "timestamp": "2026-06-01T14:32:35.466254Z"
+    },
+    {
+      "kpi": "google_trends_ai",
+      "error": "Failed to fetch (pytrends error)",
+      "timestamp": "2026-06-01T14:48:04.467662Z"
+    },
+    {
+      "kpi": "aa_inference_speed",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-01T14:48:10.789396Z"
     }
   ]
 }
