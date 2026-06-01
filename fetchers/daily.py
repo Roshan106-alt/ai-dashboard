@@ -107,12 +107,11 @@ def fetch_artificial_analysis_speed():
         if not response:
             return None
         data = response.json()
-        if 'data' not in data or len(data['data']) == 0:
+        if 'data' not in data:
             return None
         models = sorted(data['data'], key=lambda x: x.get('median_output_tokens_per_second', 0), reverse=True)[:5]
         top_speed = safe_float(models[0].get('median_output_tokens_per_second', 0))
-        avg_speed = safe_float(sum(m.get('median_output_tokens_per_second', 0) for m in models) / len(models))
-        return {"top_model_speed_tps": round(top_speed, 1), "avg_top5_speed_tps": round(avg_speed, 1), "models_tracked": len(data['data'])}
+        return {"top_model_speed_tps": round(top_speed, 1), "models_tracked": len(data['data'])}
     except Exception as e:
         print(f"  Error: {str(e)}")
         return None
