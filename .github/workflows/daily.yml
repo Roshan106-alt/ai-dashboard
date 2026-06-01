@@ -30,9 +30,18 @@ jobs:
         FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       run: python fetchers/daily.py
     
-    - name: Commit and push changes
+   - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        if [[ -n $(git status -s) ]]; then
+          git add data/kpis.json
+          git commit -m "Daily KPI update: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Roshan106-alt/ai-dashboard.git
+        else
+          echo "No changes to commit"
+        fi
         git config --local user.name "GitHub Action"
         
         if [[ -n $(git status -s) ]]; then
