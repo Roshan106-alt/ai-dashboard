@@ -18,22 +18,17 @@ from datetime import datetime
 
 
 def fetch_github_ai_repos():
-    """Fetch star count and velocity for top AI/LLM repos on GitHub."""
     try:
+        import os
         print("  Fetching GitHub AI repo metrics...")
         
-        # Search for top AI repos
-        url = "https://api.github.com/search/repositories"
-        params = {
-            "q": "topic:llm topic:ai stars:>10000",
-            "sort": "stars",
-            "order": "desc",
-            "per_page": 30
-        }
+        headers = {}
+        gh_token = os.getenv('GH_TOKEN', '')
+        if gh_token:
+            headers["Authorization"] = f"token {gh_token}"
         
-        # Build query string
-        query_url = url + "?" + "&".join(f"{k}={v}" for k, v in params.items())
-        response = http_get(query_url)
+        url = "https://api.github.com/search/repositories?q=topic:llm+topic:ai+stars:>10000&sort=stars&order=desc&per_page=30"
+        response = http_get(url, headers=headers)
         
         if not response:
             return None
@@ -43,19 +38,14 @@ def fetch_github_ai_repos():
         if 'items' not in data or len(data['items']) == 0:
             return None
         
-        # Get metrics from top repos
         top_repos = data['items'][:10]
-        
         total_stars = sum(r['stargazers_count'] for r in top_repos)
-        avg_stars = total_stars / len(top_repos)
         most_starred = top_repos[0]
         
         return {
             "total_stars_top10": total_stars,
-            "avg_stars_per_repo": round(avg_stars, 0),
             "most_starred_repo": most_starred['full_name'],
-            "most_starred_count": most_starred['stargazers_count'],
-            "repos_tracked": len(top_repos)
+            "most_starred_count": most_starred['stargazers_count']
         }
     
     except Exception as e:
