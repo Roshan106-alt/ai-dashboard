@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-02T09:20:53.126742Z",
+    "last_update": "2026-06-02T09:21:46.752763Z",
     "frequency_last_run": {
       "daily": "2026-06-02T09:19:57.931617Z",
       "weekly": "2026-06-02T08:46:11.961593Z",
       "monthly": "2026-06-02T09:20:53.126702Z",
-      "quarterly": "2026-06-02T07:29:11.064222Z"
+      "quarterly": "2026-06-02T09:21:46.752671Z"
     }
   },
   "kpis": {
@@ -174,25 +174,65 @@
       "status": "ok"
     },
     "hyperscaler_capex_reported": {
-      "value": 266,
-      "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
-      "timestamp": "2026-06-02T07:29:11.064187Z",
-      "change_pct": 52.0,
+      "value": {
+        "MSFT": {
+          "status": "requires_10q_parsing",
+          "note": "See MSFT investor relations for latest 10-Q"
+        },
+        "AMZN": {
+          "status": "requires_10q_parsing",
+          "note": "See AMZN investor relations for latest 10-Q"
+        },
+        "GOOGL": {
+          "status": "requires_10q_parsing",
+          "note": "See GOOGL investor relations for latest 10-Q"
+        },
+        "META": {
+          "status": "requires_10q_parsing",
+          "note": "See META investor relations for latest 10-Q"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-02T09:21:46.752620Z",
+      "change_pct": null,
       "status": "ok"
     },
     "cloud_revenue_growth": {
-      "value": 29,
-      "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
-      "timestamp": "2026-06-02T07:29:11.064199Z",
+      "value": {
+        "AWS": {
+          "status": "requires_amzn_10q"
+        },
+        "Azure": {
+          "status": "requires_msft_10q"
+        },
+        "Google Cloud": {
+          "status": "requires_googl_10q"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-02T09:21:46.752632Z",
       "change_pct": null,
       "status": "ok"
     },
     "ai_server_backlog": {
-      "value": null,
-      "unit": "USD",
-      "timestamp": null,
+      "value": {
+        "DELL": {
+          "status": "check_earnings_call",
+          "note": "Monitor DELL earnings calls for backlog commentary"
+        },
+        "SMCI": {
+          "status": "check_earnings_call",
+          "note": "Monitor SMCI earnings calls for backlog commentary"
+        },
+        "HPE": {
+          "status": "check_earnings_call",
+          "note": "Monitor HPE earnings calls for backlog commentary"
+        }
+      },
+      "unit": "",
+      "timestamp": "2026-06-02T09:21:46.752659Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "stock_smci": {
       "value": 46.88,
@@ -217,16 +257,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "aa_inference_speed",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-01T13:47:17.527399Z"
-    },
-    {
-      "kpi": "google_trends_ai",
-      "error": "Failed to fetch (pytrends error)",
-      "timestamp": "2026-06-01T14:06:13.670710Z"
-    },
     {
       "kpi": "ai_stock_prices",
       "error": "Failed to fetch",
@@ -466,6 +496,16 @@
       "kpi": "tsmc_revenue",
       "error": "SEC EDGAR parsing incomplete",
       "timestamp": "2026-06-02T09:20:50.951312Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T09:21:43.582616Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T09:21:46.752598Z"
     }
   ]
 }
