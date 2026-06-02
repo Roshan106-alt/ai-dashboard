@@ -172,8 +172,8 @@ async function load() {
 
         Object.entries(CATS).forEach(([tab, keys]) => {
             document.getElementById('g-'+tab).innerHTML = keys.map(k => d.kpis[k] ? card(k, d.kpis[k]) : '').join('');
-        });
-
+        });  
+       renderCharts();
     } catch(e) {
         console.error(e);
     }
