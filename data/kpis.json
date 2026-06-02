@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-06-02T07:01:25.405155Z",
+    "last_update": "2026-06-02T07:14:29.825569Z",
     "frequency_last_run": {
       "daily": "2026-06-02T06:20:39.233150Z",
       "weekly": "2026-06-02T06:51:23.893894Z",
-      "monthly": "2026-06-02T07:01:25.405112Z",
+      "monthly": "2026-06-02T07:14:29.825524Z",
       "quarterly": "2026-06-02T06:04:43.766973Z"
     }
   },
@@ -127,7 +127,7 @@
     "fred_semi_index": {
       "value": 178.2297,
       "unit": "index",
-      "timestamp": "2026-06-02T07:01:20.587794Z",
+      "timestamp": "2026-06-02T07:14:25.395065Z",
       "change_pct": 1.01,
       "status": "ok"
     },
@@ -136,7 +136,7 @@
         "OpenAI": {
           "url": "https://openai.com/api/pricing/",
           "status": "accessible",
-          "checked_at": "2026-06-02T07:01:20.835348Z"
+          "checked_at": "2026-06-02T07:14:25.646000Z"
         },
         "Anthropic": {
           "status": "error"
@@ -144,20 +144,20 @@
         "Google": {
           "url": "https://ai.google.dev/pricing",
           "status": "accessible",
-          "checked_at": "2026-06-02T07:01:24.904649Z"
+          "checked_at": "2026-06-02T07:14:29.625044Z"
         }
       },
       "unit": "snapshot",
-      "timestamp": "2026-06-02T07:01:24.905553Z",
+      "timestamp": "2026-06-02T07:14:29.625768Z",
       "change_pct": null,
       "status": "ok"
     },
     "inferencemax_efficiency": {
-  "value": "live",
-  "unit": "status",
-  "timestamp": "2026-06-02T07:00:00Z",
-  "change_pct": null,
-  "status": "ok"
+      "value": "live",
+      "unit": "",
+      "timestamp": "2026-06-02T07:14:29.825510Z",
+      "change_pct": null,
+      "status": "ok"
     },
     "hyperscaler_capex_guidance": {
       "value": null,
@@ -450,6 +450,11 @@
       "kpi": "inferencemax",
       "error": "Failed to fetch",
       "timestamp": "2026-06-02T07:01:25.405096Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T07:14:24.250904Z"
     }
   ]
 }
