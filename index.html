@@ -132,9 +132,6 @@ async function load() {
             document.getElementById('g-'+tab).innerHTML = keys.map(k => d.kpis[k] ? card(k, d.kpis[k]) : '').join('');
         });
 
-        if (d.errors.length) {
-            document.getElementById('err-box').innerHTML = `<div class="errs"><h3>⚠ Recent Errors</h3>${d.errors.slice(-5).map(e=>`<div class="err"><b>${e.kpi}</b>: ${e.error}</div>`).join('')}</div>`;
-        }
     } catch(e) {
         console.error(e);
     }
