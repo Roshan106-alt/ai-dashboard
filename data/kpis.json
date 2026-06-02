@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-02T09:37:34.294664Z",
+    "last_update": "2026-06-02T09:55:05.495250Z",
     "frequency_last_run": {
       "daily": "2026-06-02T09:37:34.294609Z",
       "weekly": "2026-06-02T09:22:45.420058Z",
       "monthly": "2026-06-02T09:20:53.126702Z",
-      "quarterly": "2026-06-02T09:21:46.752671Z"
+      "quarterly": "2026-06-02T09:55:05.495203Z"
     }
   },
   "kpis": {
@@ -174,19 +174,19 @@
       "status": "ok"
     },
     "hyperscaler_capex_reported": {
-  "value": 266,
-  "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
-  "timestamp": "2026-06-02T07:29:11.064187Z",
-  "change_pct": 52.0,
-  "status": "ok"
-},
+      "value": 266,
+      "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
+      "timestamp": "2026-06-02T07:29:11.064187Z",
+      "change_pct": 52.0,
+      "status": "ok"
+    },
     "cloud_revenue_growth": {
-  "value": 29,
-  "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
-  "timestamp": "2026-06-02T07:29:11.064199Z",
-  "change_pct": null,
-  "status": "ok"
-},
+      "value": 29,
+      "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
+      "timestamp": "2026-06-02T07:29:11.064199Z",
+      "change_pct": null,
+      "status": "ok"
+    },
     "ai_server_backlog": {
       "value": {
         "DELL": {
@@ -203,7 +203,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T09:21:46.752659Z",
+      "timestamp": "2026-06-02T09:55:05.495189Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,26 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "ai_stock_prices",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-01T14:06:14.922780Z"
-    },
-    {
-      "kpi": "aa_inference_speed",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-01T14:06:18.415543Z"
-    },
-    {
-      "kpi": "github_ai_repos",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-01T14:07:07.995202Z"
-    },
-    {
-      "kpi": "ai_job_postings",
-      "error": "Failed to fetch (Indeed blocks scrapers)",
-      "timestamp": "2026-06-01T14:07:11.414858Z"
-    },
     {
       "kpi": "tsmc_revenue",
       "error": "SEC EDGAR parsing incomplete",
@@ -479,6 +459,26 @@
       "kpi": "nvidia_dc_revenue",
       "error": "SEC EDGAR fetch incomplete",
       "timestamp": "2026-06-02T09:21:46.752598Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T09:55:02.382221Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T09:55:05.495160Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_reported",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T09:55:05.495175Z"
+    },
+    {
+      "kpi": "cloud_revenue_growth",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T09:55:05.495181Z"
     }
   ]
 }
