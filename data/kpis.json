@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-02T07:27:51.114395Z",
+    "last_update": "2026-06-02T07:29:11.064265Z",
     "frequency_last_run": {
       "daily": "2026-06-02T07:25:49.625733Z",
       "weekly": "2026-06-02T07:26:46.517332Z",
       "monthly": "2026-06-02T07:27:51.114336Z",
-      "quarterly": "2026-06-02T06:04:43.766973Z"
+      "quarterly": "2026-06-02T07:29:11.064222Z"
     }
   },
   "kpis": {
@@ -210,7 +210,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T06:04:43.766937Z",
+      "timestamp": "2026-06-02T07:29:11.064187Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -227,7 +227,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T06:04:43.766949Z",
+      "timestamp": "2026-06-02T07:29:11.064199Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -247,7 +247,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T06:04:43.766962Z",
+      "timestamp": "2026-06-02T07:29:11.064211Z",
       "change_pct": null,
       "status": "ok"
     }
@@ -484,6 +484,16 @@
       "kpi": "tsmc_revenue",
       "error": "SEC EDGAR parsing incomplete",
       "timestamp": "2026-06-02T07:27:45.984372Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T07:29:07.834082Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T07:29:11.064173Z"
     }
   ]
 }
