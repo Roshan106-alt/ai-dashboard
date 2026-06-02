@@ -109,21 +109,20 @@
   "timestamp": "2026-06-02T06:00:00Z",
   "change_pct": 4.0,
   "status": "ok"
-},
+   },
 "hbm_spot_price": {
   "value": 350,
   "unit": "USD per stack",
   "timestamp": "2026-06-02T06:00:00Z",
   "change_pct": null,
   "status": "ok"
-},
+   },
 "cowos_utilization": {
   "value": 55,
   "unit": "%",
   "timestamp": "2026-06-02T06:00:00Z",
   "change_pct": null,
   "status": "ok"
-},
     },
     "fred_semi_index": {
       "value": null,
