@@ -131,7 +131,6 @@ def fetch_silicon_analysts_scrape():
 
 
 def fetch_fred_semiconductor_index():
-    """Fetch FRED semiconductor production index using free API."""
     try:
         print("  Fetching FRED semiconductor production index...")
         
@@ -141,38 +140,54 @@ def fetch_fred_semiconductor_index():
             print("    FRED_API_KEY not set in environment")
             return None
         
+        print(f"    Key found: {fred_key[:4]}...")
+        
         url = "https://api.stlouisfed.org/fred/series/observations"
         params = {
             "series_id": "IPG3344S",
             "api_key": fred_key,
-            "limit": 12
+            "limit": "12",
+            "sort_order": "desc",
+            "file_type": "json"
         }
         
         query_url = url + "?" + "&".join(f"{k}={v}" for k, v in params.items())
+        print(f"    URL: {query_url[:80]}...")
+        
         response = http_get(query_url, timeout=15)
         
         if not response:
+            print("    No response from FRED")
             return None
+        
+        print(f"    Response status: {response.status_code}")
         
         data = response.json()
         
-        if 'observations' not in data or len(data['observations']) == 0:
+        if 'observations' not in data:
+            print(f"    Unexpected response: {str(data)[:200]}")
             return None
         
         obs = data['observations']
-        latest = obs[-1]
-        prev = obs[-2] if len(obs) > 1 else latest
+        
+        # Filter out missing values (FRED uses "." for missing)
+        obs = [o for o in obs if o['value'] != '.']
+        
+        if not obs:
+            return None
+        
+        latest = obs[0]
+        prev = obs[1] if len(obs) > 1 else latest
         
         latest_value = safe_float(latest['value'])
         prev_value = safe_float(prev['value'])
-        
         change = calculate_pct_change(latest_value, prev_value)
         
         return {
             "index_value": latest_value,
             "date": latest['date'],
             "change_pct": change,
-            "series": "IPG3344S (US Semiconductor Manufacturing)"
+            "series": "IPG3344S"
         }
     
     except Exception as e:
