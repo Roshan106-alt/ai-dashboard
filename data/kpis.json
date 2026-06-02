@@ -174,45 +174,19 @@
       "status": "ok"
     },
     "hyperscaler_capex_reported": {
-      "value": {
-        "MSFT": {
-          "status": "requires_10q_parsing",
-          "note": "See MSFT investor relations for latest 10-Q"
-        },
-        "AMZN": {
-          "status": "requires_10q_parsing",
-          "note": "See AMZN investor relations for latest 10-Q"
-        },
-        "GOOGL": {
-          "status": "requires_10q_parsing",
-          "note": "See GOOGL investor relations for latest 10-Q"
-        },
-        "META": {
-          "status": "requires_10q_parsing",
-          "note": "See META investor relations for latest 10-Q"
-        }
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T09:21:46.752620Z",
-      "change_pct": null,
-      "status": "ok"
-    },
+  "value": 266,
+  "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
+  "timestamp": "2026-06-02T07:29:11.064187Z",
+  "change_pct": 52.0,
+  "status": "ok"
+},
     "cloud_revenue_growth": {
-      "value": {
-        "AWS": {
-          "status": "requires_amzn_10q"
-        },
-        "Azure": {
-          "status": "requires_msft_10q"
-        },
-        "Google Cloud": {
-          "status": "requires_googl_10q"
-        }
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T09:21:46.752632Z",
-      "change_pct": null,
-      "status": "ok"
+  "value": 29,
+  "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
+  "timestamp": "2026-06-02T07:29:11.064199Z",
+  "change_pct": null,
+  "status": "ok"
+},
     },
     "ai_server_backlog": {
       "value": {
