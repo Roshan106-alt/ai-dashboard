@@ -153,11 +153,11 @@
       "status": "ok"
     },
     "inferencemax_efficiency": {
-      "value": null,
-      "unit": "status",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+  "value": "live",
+  "unit": "status",
+  "timestamp": "2026-06-02T07:00:00Z",
+  "change_pct": null,
+  "status": "ok"
     },
     "hyperscaler_capex_guidance": {
       "value": null,
