@@ -119,43 +119,13 @@ def fetch_nvidia_dc_revenue():
 
 
 def fetch_hyperscaler_reported_capex():
-    """Fetch actual reported capex from MSFT, AMZN, GOOGL, META 10-Q filings."""
-    try:
-        print("  Fetching hyperscaler reported capex (actual spend)...")
-        
-        companies = ["MSFT", "AMZN", "GOOGL", "META"]
-        
-        capex_data = {}
-        
-        for company in companies:
-            capex_data[company] = {
-                "status": "requires_10q_parsing",
-                "note": f"See {company} investor relations for latest 10-Q"
-            }
-        
-        return capex_data if capex_data else None
-    
-    except Exception as e:
-        print(f"  Error: {str(e)}")
-        return None
+    print("  Hyperscaler capex: manual entry quarterly")
+    return None
 
 
 def fetch_cloud_revenue_growth():
-    """Fetch YoY cloud revenue growth for AWS, Azure, GCP from 10-Q filings."""
-    try:
-        print("  Fetching cloud revenue growth (YoY)...")
-        
-        cloud_data = {
-            "AWS": {"status": "requires_amzn_10q"},
-            "Azure": {"status": "requires_msft_10q"},
-            "Google Cloud": {"status": "requires_googl_10q"}
-        }
-        
-        return cloud_data if cloud_data else None
-    
-    except Exception as e:
-        print(f"  Error: {str(e)}")
-        return None
+    print("  Cloud revenue growth: manual entry quarterly")
+    return None
 
 
 def fetch_ai_server_backlog():
