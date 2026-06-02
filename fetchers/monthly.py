@@ -311,10 +311,8 @@ def main():
     print("\n4. AI API Pricing Snapshot")
     pricing = fetch_api_pricing_log()
     if pricing:
-        update_kpi(data, "api_pricing_log", pricing, unit="snapshot")
-        print("   ✓ Pricing sources checked")
-        for provider, status in pricing.items():
-            print(f"     {provider}: {status.get('status', 'unknown')}")
+        update_kpi(data, "api_pricing_log", pricing, unit="pricing pages")
+        print(f"   ✓ {pricing}")
     else:
         log_error(data, "api_pricing_log", "Failed to fetch")
         print("   ✗ Failed")
