@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-06-02T05:52:19.313000Z",
+    "last_update": "2026-06-02T06:00:58.706812Z",
     "frequency_last_run": {
       "daily": "2026-06-02T05:48:33.864611Z",
       "weekly": "2026-06-02T05:51:20.874010Z",
-      "monthly": "2026-06-02T05:50:01.070799Z",
+      "monthly": "2026-06-02T06:00:58.706760Z",
       "quarterly": "2026-06-02T05:52:19.312954Z"
     }
   },
@@ -136,7 +136,7 @@
         "OpenAI": {
           "url": "https://openai.com/api/pricing/",
           "status": "accessible",
-          "checked_at": "2026-06-02T05:49:56.428011Z"
+          "checked_at": "2026-06-02T06:00:53.704021Z"
         },
         "Anthropic": {
           "status": "error"
@@ -144,11 +144,11 @@
         "Google": {
           "url": "https://ai.google.dev/pricing",
           "status": "accessible",
-          "checked_at": "2026-06-02T05:50:00.613416Z"
+          "checked_at": "2026-06-02T06:00:57.827230Z"
         }
       },
       "unit": "snapshot",
-      "timestamp": "2026-06-02T05:50:00.614279Z",
+      "timestamp": "2026-06-02T06:00:57.828243Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -360,6 +360,21 @@
       "kpi": "nvidia_dc_revenue",
       "error": "SEC EDGAR fetch incomplete",
       "timestamp": "2026-06-02T05:52:19.312899Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T06:00:47.410007Z"
+    },
+    {
+      "kpi": "fred_semi_index",
+      "error": "API key missing or error",
+      "timestamp": "2026-06-02T06:00:53.400371Z"
+    },
+    {
+      "kpi": "inferencemax",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-02T06:00:58.706743Z"
     }
   ]
 }
