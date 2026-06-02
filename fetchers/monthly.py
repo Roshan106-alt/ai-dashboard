@@ -196,32 +196,24 @@ def fetch_fred_semiconductor_index():
 
 
 def fetch_api_pricing_log():
-    """Log current API pricing from official pages and compare to previous month."""
     try:
-        from bs4 import BeautifulSoup
-        
         print("  Fetching API pricing snapshot...")
-        
-        pricing_data = {}
-        
         sources = [
             ("OpenAI", "https://openai.com/api/pricing/"),
-            ("Anthropic", "https://www.anthropic.com/pricing/claude"),
+            ("Anthropic", "https://www.anthropic.com/pricing"),
             ("Google", "https://ai.google.dev/pricing")
         ]
-        
+        results = []
         for provider, url in sources:
             response = http_get(url, timeout=10)
             if response:
-                pricing_data[provider] = {
-                    "url": url,
-                    "status": "accessible",
-                    "checked_at": datetime.utcnow().isoformat() + "Z"
-                }
+                results.append(f"{provider} ✓")
             else:
-                pricing_data[provider] = {"status": "error"}
-        
-        return pricing_data if pricing_data else None
+                results.append(f"{provider} ✗")
+        return "  ".join(results)
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return None
     
     except Exception as e:
         print(f"  Error: {str(e)}")
