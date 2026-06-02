@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-06-02T06:24:05.876685Z",
+    "last_update": "2026-06-02T06:33:14.656875Z",
     "frequency_last_run": {
       "daily": "2026-06-02T06:20:39.233150Z",
       "weekly": "2026-06-02T06:24:05.876645Z",
-      "monthly": "2026-06-02T06:00:58.706760Z",
+      "monthly": "2026-06-02T06:33:14.656833Z",
       "quarterly": "2026-06-02T06:04:43.766973Z"
     }
   },
@@ -136,7 +136,7 @@
         "OpenAI": {
           "url": "https://openai.com/api/pricing/",
           "status": "accessible",
-          "checked_at": "2026-06-02T06:00:53.704021Z"
+          "checked_at": "2026-06-02T06:33:10.218203Z"
         },
         "Anthropic": {
           "status": "error"
@@ -144,11 +144,11 @@
         "Google": {
           "url": "https://ai.google.dev/pricing",
           "status": "accessible",
-          "checked_at": "2026-06-02T06:00:57.827230Z"
+          "checked_at": "2026-06-02T06:33:14.076561Z"
         }
       },
       "unit": "snapshot",
-      "timestamp": "2026-06-02T06:00:57.828243Z",
+      "timestamp": "2026-06-02T06:33:14.077411Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -400,6 +400,21 @@
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
       "timestamp": "2026-06-02T06:24:05.617628Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T06:33:08.922210Z"
+    },
+    {
+      "kpi": "fred_semi_index",
+      "error": "API key missing or error",
+      "timestamp": "2026-06-02T06:33:09.796649Z"
+    },
+    {
+      "kpi": "inferencemax",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-02T06:33:14.656819Z"
     }
   ]
 }
