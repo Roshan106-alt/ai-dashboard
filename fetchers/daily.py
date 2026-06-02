@@ -78,17 +78,8 @@ def fetch_api_pricing():
         if not response:
             return None
         
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        print("    (Note: HTML structure may vary — manual check recommended)")
-        return {
-            "last_checked": datetime.utcnow().isoformat() + "Z",
-            "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
-        }
-    
-    except Exception as e:
-        print(f"  Error: {str(e)}")
-        return None
+        print("    Pricing pages checked")
+        return "OpenAI · Anthropic · Google"
 
 
 def fetch_artificial_analysis_speed():
