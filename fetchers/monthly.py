@@ -332,8 +332,7 @@ def main():
     imax = fetch_inferencemax_efficiency()
     if imax:
         update_kpi(data, "inferencemax_efficiency", imax['status'])
-        print("   ✓ Dashboard live at inferencemax.ai")
-        print(f"     Metrics: {imax['metrics']}")
+        print("   ✓ InferenceX dashboard live at inferencex.semianalysis.com")
     else:
         log_error(data, "inferencemax", "Failed to fetch")
         print("   ✗ Failed")
