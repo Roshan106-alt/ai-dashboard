@@ -57,7 +57,6 @@ def fetch_tsmc_revenue():
 
 
 def fetch_silicon_analysts():
-    """Fetch Silicon Analysts market pulse data — TSMC pricing, HBM costs, CoWoS capacity."""
     try:
         print("  Fetching Silicon Analysts market pulse...")
         
@@ -67,22 +66,67 @@ def fetch_silicon_analysts():
         )
         
         if not response:
+            print("    API not responding, using fallback scrape")
+            return fetch_silicon_analysts_scrape()
+        
+        # Try parsing as JSON
+        try:
+            data = response.json()
+            if isinstance(data, dict):
+                return {
+                    "tsmc_3nm_price": data.get('tsmc_3nm_wafer_price_usd') or data.get('tsmc_3nm_price') or data.get('wafer_price_3nm'),
+                    "hbm_price": data.get('hbm_spot_price_usd') or data.get('hbm_price') or data.get('hbm_cost'),
+                    "cowos_capacity_percent": data.get('cowos_utilization_percent') or data.get('cowos_utilization') or data.get('packaging_utilization'),
+                    "last_updated": data.get('updated_at', datetime.utcnow().isoformat() + "Z")
+                }
+        except:
+            pass
+        
+        # Fallback to scraping the market page
+        return fetch_silicon_analysts_scrape()
+    
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return fetch_silicon_analysts_scrape()
+
+
+def fetch_silicon_analysts_scrape():
+    try:
+        import re
+        from bs4 import BeautifulSoup
+        
+        print("    Trying scrape fallback...")
+        response = http_get("https://siliconanalysts.com/market", timeout=15)
+        
+        if not response:
             return None
         
-        data = response.json()
+        text = response.text
         
-        if isinstance(data, dict):
+        # Extract TSMC 3nm price
+        tsmc_match = re.search(r'3nm.*?\$(\d{1,3}(?:,\d{3})*)', text, re.IGNORECASE)
+        tsmc_price = None
+        if tsmc_match:
+            tsmc_price = int(tsmc_match.group(1).replace(',', ''))
+        
+        # Extract CoWoS utilization
+        cowos_match = re.search(r'CoWoS.*?(\d{2,3}).*?%', text, re.IGNORECASE)
+        cowos_pct = None
+        if cowos_match:
+            cowos_pct = int(cowos_match.group(1))
+        
+        if tsmc_price or cowos_pct:
             return {
-                "tsmc_3nm_price": data.get('tsmc_3nm_wafer_price_usd'),
-                "hbm_price": data.get('hbm_spot_price_usd'),
-                "cowos_capacity_percent": data.get('cowos_utilization_percent'),
-                "last_updated": data.get('updated_at', datetime.utcnow().isoformat() + "Z")
+                "tsmc_3nm_price": tsmc_price,
+                "hbm_price": None,
+                "cowos_capacity_percent": cowos_pct,
+                "last_updated": datetime.utcnow().isoformat() + "Z"
             }
         
         return None
     
     except Exception as e:
-        print(f"  Error: {str(e)}")
+        print(f"    Scrape fallback error: {str(e)}")
         return None
 
 
