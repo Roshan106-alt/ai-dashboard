@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-06-02T06:02:29.011181Z",
+    "last_update": "2026-06-02T06:03:39.729815Z",
     "frequency_last_run": {
       "daily": "2026-06-02T06:02:29.011133Z",
-      "weekly": "2026-06-02T05:51:20.874010Z",
+      "weekly": "2026-06-02T06:03:39.729767Z",
       "monthly": "2026-06-02T06:00:58.706760Z",
       "quarterly": "2026-06-02T05:52:19.312954Z"
     }
@@ -69,16 +69,16 @@
       "status": "pending"
     },
     "github_ai_stars_top10": {
-      "value": 1311386,
+      "value": 1311412,
       "unit": "stars",
-      "timestamp": "2026-06-02T05:51:17.113416Z",
+      "timestamp": "2026-06-02T06:03:36.374803Z",
       "change_pct": null,
       "status": "ok"
     },
     "huggingface_downloads_top20": {
       "value": 855060290,
       "unit": "downloads",
-      "timestamp": "2026-06-02T05:51:17.260058Z",
+      "timestamp": "2026-06-02T06:03:36.437735Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -92,7 +92,7 @@
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-06-02T05:51:20.874000Z",
+      "timestamp": "2026-06-02T06:03:39.729756Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -380,6 +380,11 @@
       "kpi": "aa_inference_speed",
       "error": "Failed to fetch",
       "timestamp": "2026-06-02T06:02:29.011115Z"
+    },
+    {
+      "kpi": "ai_job_postings",
+      "error": "Failed to fetch (Indeed blocks scrapers)",
+      "timestamp": "2026-06-02T06:03:39.633946Z"
     }
   ]
 }
