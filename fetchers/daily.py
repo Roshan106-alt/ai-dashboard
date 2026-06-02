@@ -189,7 +189,6 @@ def main():
     if aa_speed:
         update_kpi(data, "aa_inference_speed_tps", aa_speed['top_model_speed_tps'], unit="tokens/sec")
         print(f"   ✓ Top model: {aa_speed['top_model_speed_tps']} TPS")
-        print(f"     Avg top 5: {aa_speed['avg_top5_speed_tps']} TPS")
     else:
         log_error(data, "aa_inference_speed", "Failed to fetch")
         print("   ✗ Failed")
