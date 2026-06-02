@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-02T06:04:43.767028Z",
+    "last_update": "2026-06-02T06:20:39.233202Z",
     "frequency_last_run": {
-      "daily": "2026-06-02T06:02:29.011133Z",
+      "daily": "2026-06-02T06:20:39.233150Z",
       "weekly": "2026-06-02T06:03:39.729767Z",
       "monthly": "2026-06-02T06:00:58.706760Z",
       "quarterly": "2026-06-02T06:04:43.766973Z"
@@ -10,63 +10,63 @@
   },
   "kpis": {
     "google_trends_ai": {
-      "value": 35,
+      "value": 32,
       "unit": "index (0-100)",
-      "timestamp": "2026-06-02T06:02:23.780801Z",
+      "timestamp": "2026-06-02T06:20:34.178581Z",
       "change_pct": null,
       "status": "ok"
     },
     "stock_nvda": {
       "value": 224.36,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:02:25.579473Z",
+      "timestamp": "2026-06-02T06:20:36.515905Z",
       "change_pct": 5.59,
       "status": "ok"
     },
     "stock_msft": {
       "value": 460.52,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:02:25.579493Z",
+      "timestamp": "2026-06-02T06:20:36.515925Z",
       "change_pct": 2.34,
       "status": "ok"
     },
     "stock_googl": {
       "value": 376.37,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:02:25.579498Z",
+      "timestamp": "2026-06-02T06:20:36.515932Z",
       "change_pct": -1.13,
       "status": "ok"
     },
     "stock_meta": {
       "value": 600.47,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:02:25.579502Z",
+      "timestamp": "2026-06-02T06:20:36.515937Z",
       "change_pct": -5.01,
       "status": "ok"
     },
     "stock_amzn": {
       "value": 261.26,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:02:25.579506Z",
+      "timestamp": "2026-06-02T06:20:36.515942Z",
       "change_pct": -3.42,
       "status": "ok"
     },
     "api_pricing_snapshot": {
       "value": {
-        "last_checked": "2026-06-02T06:02:25.789143Z",
+        "last_checked": "2026-06-02T06:20:37.017968Z",
         "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
       },
       "unit": "",
-      "timestamp": "2026-06-02T06:02:25.790822Z",
+      "timestamp": "2026-06-02T06:20:37.019565Z",
       "change_pct": null,
       "status": "ok"
     },
     "aa_inference_speed_tps": {
-      "value": null,
+      "value": 408.0,
       "unit": "tokens/sec",
-      "timestamp": null,
+      "timestamp": "2026-06-02T06:20:39.233126Z",
       "change_pct": null,
-      "status": "pending"
+      "status": "ok"
     },
     "github_ai_stars_top10": {
       "value": 1311412,
