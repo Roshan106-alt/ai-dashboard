@@ -52,15 +52,12 @@
       "status": "ok"
     },
     "api_pricing_snapshot": {
-      "value": {
-        "last_checked": "2026-06-02T07:55:13.646992Z",
-        "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T07:55:13.648947Z",
-      "change_pct": null,
-      "status": "ok"
-    },
+  "value": "OpenAI · Anthropic · Google",
+  "unit": "pricing pages monitored daily",
+  "timestamp": "2026-06-02T07:25:47.530253Z",
+  "change_pct": null,
+  "status": "ok"
+},
     "aa_inference_speed_tps": {
       "value": 414.2,
       "unit": "tokens/sec",
@@ -132,26 +129,12 @@
       "status": "ok"
     },
     "api_pricing_log": {
-      "value": {
-        "OpenAI": {
-          "url": "https://openai.com/api/pricing/",
-          "status": "accessible",
-          "checked_at": "2026-06-02T07:27:46.947626Z"
-        },
-        "Anthropic": {
-          "status": "error"
-        },
-        "Google": {
-          "url": "https://ai.google.dev/pricing",
-          "status": "accessible",
-          "checked_at": "2026-06-02T07:27:50.874754Z"
-        }
-      },
-      "unit": "snapshot",
-      "timestamp": "2026-06-02T07:27:50.875602Z",
-      "change_pct": null,
-      "status": "ok"
-    },
+  "value": "OpenAI ✓  Google ✓  Anthropic ✗",
+  "unit": "pricing pages accessible",
+  "timestamp": "2026-06-02T07:27:50.875602Z",
+  "change_pct": null,
+  "status": "ok"
+},
     "inferencemax_efficiency": {
       "value": "live",
       "unit": "",
@@ -191,46 +174,19 @@
       "status": "ok"
     },
     "hyperscaler_capex_reported": {
-      "value": {
-        "MSFT": {
-          "status": "requires_10q_parsing",
-          "note": "See MSFT investor relations for latest 10-Q"
-        },
-        "AMZN": {
-          "status": "requires_10q_parsing",
-          "note": "See AMZN investor relations for latest 10-Q"
-        },
-        "GOOGL": {
-          "status": "requires_10q_parsing",
-          "note": "See GOOGL investor relations for latest 10-Q"
-        },
-        "META": {
-          "status": "requires_10q_parsing",
-          "note": "See META investor relations for latest 10-Q"
-        }
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T07:29:11.064187Z",
-      "change_pct": null,
-      "status": "ok"
-    },
+  "value": 266,
+  "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
+  "timestamp": "2026-06-02T07:29:11.064187Z",
+  "change_pct": 52.0,
+  "status": "ok"
+   },
     "cloud_revenue_growth": {
-      "value": {
-        "AWS": {
-          "status": "requires_amzn_10q"
-        },
-        "Azure": {
-          "status": "requires_msft_10q"
-        },
-        "Google Cloud": {
-          "status": "requires_googl_10q"
-        }
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T07:29:11.064199Z",
-      "change_pct": null,
-      "status": "ok"
-    },
+  "value": 29,
+  "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
+  "timestamp": "2026-06-02T07:29:11.064199Z",
+  "change_pct": null,
+  "status": "ok"
+},
     "ai_server_backlog": {
       "value": {
         "DELL": {
