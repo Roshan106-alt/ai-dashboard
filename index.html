@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Trade Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -72,12 +73,41 @@
         <button class="tab" onclick="show('economics',this)">Economics</button>
         <button class="tab" onclick="show('infra',this)">Infrastructure</button>
         <button class="tab" onclick="show('market',this)">Market</button>
+        <button class="tab" onclick="show('charts',this)">📈 Charts</button>
     </div>
     <div id="supply" class="pane on"><div class="grid" id="g-supply"></div></div>
     <div id="adoption" class="pane"><div class="grid" id="g-adoption"></div></div>
     <div id="economics" class="pane"><div class="grid" id="g-economics"></div></div>
     <div id="infra" class="pane"><div class="grid" id="g-infra"></div></div>
     <div id="market" class="pane"><div class="grid" id="g-market"></div></div>
+    <div id="charts" class="pane">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(560px,1fr));gap:1.5rem;">
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">AI Job Postings</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">Weekly count · Rate of change</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-jobs"></canvas></div>
+                <div id="stats-jobs" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">TSMC Monthly Revenue</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">NT$ billion · Month-over-month change</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-tsmc"></canvas></div>
+                <div id="stats-tsmc" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">Hyperscaler Capex Reported</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">USD billion · Year-over-year change</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-capex"></canvas></div>
+                <div id="stats-capex" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">HBM Spot Price</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">USD per stack · Month-over-month change</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-hbm"></canvas></div>
+                <div id="stats-hbm" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
+        </div>
+    </div>
     <div id="err-box"></div>
 </div>
 <script>
@@ -156,6 +186,97 @@ function show(id, btn) {
     btn.classList.add('on');
 }
 
+let chartInstances = {};
+
+function buildChart(canvasId, history, type) {
+    if (!history || history.length === 0) {
+        document.getElementById(canvasId).parentElement.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--faint);font-size:0.9rem;">No historical data yet — builds automatically over time</div>';
+        return;
+    }
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const c = {
+        line: dark ? '#6ab0f5' : '#1a4fa0',
+        barPos: dark ? '#3ecf8e' : '#0a7c52',
+        barNeg: dark ? '#f07070' : '#c0392b',
+        grid: dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
+        text: dark ? '#b8b8b8' : '#666666'
+    };
+    const labels = history.map(p => new Date(p.date).toLocaleDateString('en-GB', {month:'short', year:'2-digit'}));
+    const values = history.map(p => p.value);
+    const changes = history.map(p => p.change_pct);
+    if (chartInstances[canvasId]) chartInstances[canvasId].destroy();
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    chartInstances[canvasId] = new Chart(ctx, {
+        data: {
+            labels,
+            datasets: [
+                {
+                    type: type === 'bar' ? 'bar' : 'line',
+                    label: 'Value',
+                    data: values,
+                    backgroundColor: c.line + '55',
+                    borderColor: c.line,
+                    borderWidth: type === 'bar' ? 0 : 2,
+                    pointBackgroundColor: c.line,
+                    pointRadius: 4,
+                    fill: type !== 'bar',
+                    tension: 0.3,
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'bar',
+                    label: '% Change',
+                    data: changes,
+                    backgroundColor: changes.map(v => v === null ? 'transparent' : v >= 0 ? c.barPos + 'aa' : c.barNeg + 'aa'),
+                    borderWidth: 0,
+                    yAxisID: 'y2'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: c.grid }, ticks: { color: c.text, font: { size: 11 } } },
+                y: { position: 'left', grid: { color: c.grid }, ticks: { color: c.text, font: { size: 11 } } },
+                y2: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: c.text, font: { size: 11 }, callback: v => v + '%' } }
+            }
+        }
+    });
+}
+
+function buildStats(statsId, history) {
+    if (!history || history.length < 1) return;
+    const el = document.getElementById(statsId);
+    if (!el) return;
+    const latest = history[history.length - 1];
+    const first = history[0];
+    const totalChg = first.value ? ((latest.value - first.value) / Math.abs(first.value) * 100).toFixed(1) : null;
+    el.innerHTML = `
+        <div><b style="display:block;font-size:1.1rem;font-weight:700;color:var(--text)">${latest.value?.toLocaleString()}</b>Latest</div>
+        ${latest.change_pct !== null && latest.change_pct !== undefined ? `<div><b style="display:block;font-size:1.1rem;font-weight:700;color:${latest.change_pct>=0?'var(--green)':'var(--red)'}">${latest.change_pct>=0?'+':''}${latest.change_pct}%</b>vs Prior</div>` : ''}
+        ${totalChg !== null ? `<div><b style="display:block;font-size:1.1rem;font-weight:700;color:${totalChg>=0?'var(--green)':'var(--red)'}">${totalChg>=0?'+':''}${totalChg}%</b>Total Change</div>` : ''}
+        <div><b style="display:block;font-size:1.1rem;font-weight:700;color:var(--text)">${history.length}</b>Data Points</div>
+    `;
+}
+
+async function renderCharts() {
+    try {
+        const res = await fetch('data/kpis-history.json?t='+Date.now());
+        if (!res.ok) return;
+        const h = await res.json();
+        buildChart('chart-jobs', h.ai_job_postings, 'line');
+        buildChart('chart-tsmc', h.tsmc_monthly_revenue, 'bar');
+        buildChart('chart-capex', h.hyperscaler_capex_reported, 'bar');
+        buildChart('chart-hbm', h.hbm_spot_price, 'line');
+        buildStats('stats-jobs', h.ai_job_postings);
+        buildStats('stats-tsmc', h.tsmc_monthly_revenue);
+        buildStats('stats-capex', h.hyperscaler_capex_reported);
+        buildStats('stats-hbm', h.hbm_spot_price);
+    } catch(e) { console.error(e); }
+}    
 load();
 setInterval(load, 5*60*1000);
 </script>
