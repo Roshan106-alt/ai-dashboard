@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-02T07:14:29.825569Z",
+    "last_update": "2026-06-02T07:25:49.625788Z",
     "frequency_last_run": {
-      "daily": "2026-06-02T06:20:39.233150Z",
+      "daily": "2026-06-02T07:25:49.625733Z",
       "weekly": "2026-06-02T06:51:23.893894Z",
       "monthly": "2026-06-02T07:14:29.825524Z",
       "quarterly": "2026-06-02T06:04:43.766973Z"
@@ -19,52 +19,52 @@
     "stock_nvda": {
       "value": 224.36,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:20:36.515905Z",
+      "timestamp": "2026-06-02T07:25:46.935047Z",
       "change_pct": 5.59,
       "status": "ok"
     },
     "stock_msft": {
       "value": 460.52,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:20:36.515925Z",
+      "timestamp": "2026-06-02T07:25:46.935070Z",
       "change_pct": 2.34,
       "status": "ok"
     },
     "stock_googl": {
       "value": 376.37,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:20:36.515932Z",
+      "timestamp": "2026-06-02T07:25:46.935077Z",
       "change_pct": -1.13,
       "status": "ok"
     },
     "stock_meta": {
       "value": 600.47,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:20:36.515937Z",
+      "timestamp": "2026-06-02T07:25:46.935082Z",
       "change_pct": -5.01,
       "status": "ok"
     },
     "stock_amzn": {
       "value": 261.26,
       "unit": "USD",
-      "timestamp": "2026-06-02T06:20:36.515942Z",
+      "timestamp": "2026-06-02T07:25:46.935087Z",
       "change_pct": -3.42,
       "status": "ok"
     },
     "api_pricing_snapshot": {
       "value": {
-        "last_checked": "2026-06-02T06:20:37.017968Z",
+        "last_checked": "2026-06-02T07:25:47.528409Z",
         "note": "See official pricing pages: openai.com, anthropic.com, ai.google.dev"
       },
       "unit": "",
-      "timestamp": "2026-06-02T06:20:37.019565Z",
+      "timestamp": "2026-06-02T07:25:47.530253Z",
       "change_pct": null,
       "status": "ok"
     },
     "aa_inference_speed_tps": {
-      "value": 408.0,
+      "value": 414.2,
       "unit": "tokens/sec",
-      "timestamp": "2026-06-02T06:20:39.233126Z",
+      "timestamp": "2026-06-02T07:25:49.625708Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -97,11 +97,11 @@
       "status": "ok"
     },
     "tsmc_monthly_revenue": {
-  "value": 410.73,
-  "unit": "NT$ billion",
-  "timestamp": "2026-05-08T00:00:00Z",
-  "change_pct": -1.1,
-  "status": "ok"
+      "value": 410.73,
+      "unit": "NT$ billion",
+      "timestamp": "2026-05-08T00:00:00Z",
+      "change_pct": -1.1,
+      "status": "ok"
     },
     "tsmc_3nm_wafer_price": {
       "value": 19500,
@@ -160,16 +160,28 @@
       "status": "ok"
     },
     "hyperscaler_capex_guidance": {
-  "value": {
-    "MSFT": {"guidance": "$80B FY2026", "yoy_growth": "+43%"},
-    "AMZN": {"guidance": "$105B 2025", "yoy_growth": "+62%"},
-    "GOOGL": {"guidance": "$75B 2025", "yoy_growth": "+43%"},
-    "META": {"guidance": "$60-65B 2025", "yoy_growth": "+57%"}
-  },
-  "unit": "USD billion",
-  "timestamp": "2026-06-02T07:00:00Z",
-  "change_pct": null,
-  "status": "ok"
+      "value": {
+        "MSFT": {
+          "guidance": "$80B FY2026",
+          "yoy_growth": "+43%"
+        },
+        "AMZN": {
+          "guidance": "$105B 2025",
+          "yoy_growth": "+62%"
+        },
+        "GOOGL": {
+          "guidance": "$75B 2025",
+          "yoy_growth": "+43%"
+        },
+        "META": {
+          "guidance": "$60-65B 2025",
+          "yoy_growth": "+57%"
+        }
+      },
+      "unit": "USD billion",
+      "timestamp": "2026-06-02T07:00:00Z",
+      "change_pct": null,
+      "status": "ok"
     },
     "nvidia_dc_revenue": {
       "value": null,
@@ -297,13 +309,13 @@
       "timestamp": "2026-06-01T14:09:20.569593Z"
     },
     {
-     "nvidia_dc_revenue": {
-  "value": 35.6,
-  "unit": "USD billion",
-  "timestamp": "2026-02-26T00:00:00Z",
-  "change_pct": 93.0,
-  "status": "ok"
-    },
+      "nvidia_dc_revenue": {
+        "value": 35.6,
+        "unit": "USD billion",
+        "timestamp": "2026-02-26T00:00:00Z",
+        "change_pct": 93.0,
+        "status": "ok"
+      },
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
       "timestamp": "2026-06-01T14:31:41.576891Z"
@@ -462,6 +474,11 @@
       "kpi": "tsmc_revenue",
       "error": "SEC EDGAR parsing incomplete",
       "timestamp": "2026-06-02T07:14:24.250904Z"
+    },
+    {
+      "kpi": "google_trends_ai",
+      "error": "Failed to fetch (pytrends error)",
+      "timestamp": "2026-06-02T07:25:44.339031Z"
     }
   ]
 }
