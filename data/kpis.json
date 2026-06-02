@@ -188,25 +188,33 @@
       "status": "ok"
     },
     "ai_server_backlog": {
-      "value": {
-        "DELL": {
-          "status": "check_earnings_call",
-          "note": "Monitor DELL earnings calls for backlog commentary"
-        },
-        "SMCI": {
-          "status": "check_earnings_call",
-          "note": "Monitor SMCI earnings calls for backlog commentary"
-        },
-        "HPE": {
-          "status": "check_earnings_call",
-          "note": "Monitor HPE earnings calls for backlog commentary"
-        }
-      },
-      "unit": "",
-      "timestamp": "2026-06-02T07:29:11.064211Z",
-      "change_pct": null,
-      "status": "ok"
-    }
+  "value": null,
+  "unit": "USD",
+  "timestamp": null,
+  "change_pct": null,
+  "status": "pending"
+},
+"stock_smci": {
+  "value": null,
+  "unit": "USD",
+  "timestamp": null,
+  "change_pct": null,
+  "status": "pending"
+},
+"stock_dell": {
+  "value": null,
+  "unit": "USD",
+  "timestamp": null,
+  "change_pct": null,
+  "status": "pending"
+},
+"stock_hpe": {
+  "value": null,
+  "unit": "USD",
+  "timestamp": null,
+  "change_pct": null,
+  "status": "pending"
+}
   },
   "errors": [
     {
