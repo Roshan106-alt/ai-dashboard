@@ -96,7 +96,19 @@ function fmt(v) {
         if (v > 1e3) return (v/1e3).toFixed(1)+'K';
         return v.toLocaleString(undefined,{maximumFractionDigits:2});
     }
-    if (typeof v === 'object') return 'See details';
+    if (typeof v === 'object') {
+        return Object.entries(v)
+            .map(([k, val]) => {
+                if (typeof val === 'object') {
+                    const inner = Object.entries(val)
+                        .map(([ik, iv]) => `${iv}`)
+                        .join(' · ');
+                    return `<b>${k}:</b> ${inner}`;
+                }
+                return `<b>${k}:</b> ${val}`;
+            })
+            .join('<br>');
+    }
     return String(v);
 }
 
@@ -111,7 +123,7 @@ function card(name, kpi) {
     const ts = kpi.timestamp ? new Date(kpi.timestamp).toLocaleDateString() : '';
     return `<div class="card ${empty?'dim':''}">
         <div class="label">${fmtName(name)}</div>
-        <div class="val ${empty?'empty':''}">${empty?'Pending':v}</div>
+        <div class="val ${empty?'empty':''}" style="font-size:${typeof kpi.value==='object'?'0.85rem':'1.7rem'}">${empty?'Pending':v}</div>
         <div class="unit">${kpi.unit||''}</div>
         ${chg!=null?`<div class="chg ${chg>0?'up':'dn'}">${chg>0?'↑':'↓'} ${Math.abs(chg)}%</div>`:''}
         ${ts?`<div class="ts">Updated ${ts}</div>`:''}
