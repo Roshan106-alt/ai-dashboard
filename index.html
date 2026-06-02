@@ -105,6 +105,18 @@
                 <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">USD per stack · Month-over-month change</div>
                 <div style="position:relative;height:220px;"><canvas id="chart-hbm"></canvas></div>
                 <div id="stats-hbm" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+                <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">GitHub AI Stars (Top 10 Repos)</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">Cumulative stars · Week-over-week growth</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-github"></canvas></div>
+                <div id="stats-github" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;">
+                <div style="font-size:0.95rem;font-weight:700;margin-bottom:0.25rem;">FRED Semiconductor Index</div>
+                <div style="font-size:0.75rem;color:var(--faint);margin-bottom:1rem;">US production index (IPG3344S) · Month-over-month change</div>
+                <div style="position:relative;height:220px;"><canvas id="chart-fred"></canvas></div>
+                <div id="stats-fred" style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);"></div>
+            </div>
             </div>
         </div>
     </div>
@@ -275,6 +287,10 @@ async function renderCharts() {
         buildStats('stats-tsmc', h.tsmc_monthly_revenue);
         buildStats('stats-capex', h.hyperscaler_capex_reported);
         buildStats('stats-hbm', h.hbm_spot_price);
+        buildChart('chart-github', h.github_ai_stars_top10, 'line');
+        buildChart('chart-fred', h.fred_semi_index, 'line');
+        buildStats('stats-github', h.github_ai_stars_top10);
+        buildStats('stats-fred', h.fred_semi_index);
     } catch(e) { console.error(e); }
 }    
 load();
