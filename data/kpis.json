@@ -184,11 +184,11 @@
       "status": "ok"
     },
     "nvidia_dc_revenue": {
-      "value": null,
-      "unit": "USD billion",
-      "timestamp": null,
-      "change_pct": null,
-      "status": "pending"
+  "value": 35.6,
+  "unit": "USD billion",
+  "timestamp": "2026-02-26T00:00:00Z",
+  "change_pct": 93.0,
+  "status": "ok"
     },
     "hyperscaler_capex_reported": {
       "value": {
@@ -309,16 +309,9 @@
       "timestamp": "2026-06-01T14:09:20.569593Z"
     },
     {
-      "nvidia_dc_revenue": {
-        "value": 35.6,
-        "unit": "USD billion",
-        "timestamp": "2026-02-26T00:00:00Z",
-        "change_pct": 93.0,
-        "status": "ok"
-      },
-      "kpi": "ai_job_postings",
-      "error": "Failed to fetch (Indeed blocks scrapers)",
-      "timestamp": "2026-06-01T14:31:41.576891Z"
+  "kpi": "ai_job_postings",
+  "error": "Failed to fetch (Indeed blocks scrapers)",
+  "timestamp": "2026-06-01T14:31:41.576891Z"
     },
     {
       "kpi": "tsmc_revenue",
