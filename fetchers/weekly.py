@@ -99,38 +99,36 @@ def fetch_hugging_face_models():
 
 
 def fetch_ai_job_postings():
-    """Fetch count of AI-related job postings from Indeed."""
     try:
-        from bs4 import BeautifulSoup
+        import os
+        print("  Fetching AI job postings via Adzuna...")
         
-        print("  Fetching AI job postings...")
+        app_id = os.getenv('ADZUNA_APP_ID')
+        api_key = os.getenv('ADZUNA_API_KEY')
         
-        url = "https://www.indeed.com/jobs?q=AI+machine+learning&jt=all"
-        response = http_get(url, timeout=10)
+        if not app_id or not api_key:
+            print("    ADZUNA credentials not set")
+            return None
+        
+        url = f"https://api.adzuna.com/v1/api/jobs/us/search/1"
+        params = f"?app_id={app_id}&app_key={api_key}&what=artificial+intelligence+machine+learning&results_per_page=1&content-type=application/json"
+        
+        response = http_get(url + params, timeout=15)
         
         if not response:
             return None
         
-        soup = BeautifulSoup(response.content, 'html.parser')
+        data = response.json()
         
-        # Try to find job count
-        count_text = soup.find('span', {'data-testid': 'jobCountAndLocationText'})
+        count = data.get('count', 0)
         
-        if count_text:
-            import re
-            match = re.search(r'(\d+(?:,\d+)?)', count_text.text)
-            if match:
-                count = int(match.group(1).replace(',', ''))
-                return {
-                    "ai_job_postings": count,
-                    "source": "Indeed"
-                }
+        if count:
+            return {
+                "ai_job_postings": count,
+                "source": "Adzuna"
+            }
         
-        print("    (Note: Indeed structure varies — recommend using job board API)")
-        return {
-            "ai_job_postings": None,
-            "note": "Use LinkedIn API or similar service for reliable job data"
-        }
+        return None
     
     except Exception as e:
         print(f"  Error: {str(e)}")
