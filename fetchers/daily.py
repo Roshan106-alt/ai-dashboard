@@ -49,7 +49,7 @@ def fetch_ai_stock_prices():
     try:
         import yfinance as yf
         print("  Fetching AI stock prices...")
-        tickers = ['NVDA', 'MSFT', 'GOOGL', 'META', 'AMZN']
+        tickers = ['NVDA', 'MSFT', 'GOOGL', 'META', 'AMZN', 'SMCI', 'DELL', 'HPE']
         prices = {}
         for ticker in tickers:
             try:
