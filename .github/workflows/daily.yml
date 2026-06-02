@@ -31,6 +31,8 @@ jobs:
         FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         AA_API_KEY: ${{ secrets.AA_API_KEY }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+        ADZUNA_API_KEY: ${{ secrets.ADZUNA_API_KEY }}
       run: python fetchers/daily.py
     
     - name: Commit and push changes
