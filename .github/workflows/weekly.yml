@@ -40,7 +40,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         if [[ -n $(git status -s) ]]; then
-          git add data/kpis.json
+          git add data/kpis.json data/kpis-history.json
           git commit -m "Daily KPI update: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           git push origin main
         else
