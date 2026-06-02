@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-06-02T07:55:15.757302Z",
+    "last_update": "2026-06-02T08:25:15.116774Z",
     "frequency_last_run": {
-      "daily": "2026-06-02T07:55:15.757248Z",
+      "daily": "2026-06-02T08:25:15.116725Z",
       "weekly": "2026-06-02T07:26:46.517332Z",
       "monthly": "2026-06-02T07:27:51.114336Z",
       "quarterly": "2026-06-02T07:29:11.064222Z"
@@ -10,58 +10,58 @@
   },
   "kpis": {
     "google_trends_ai": {
-      "value": 31,
+      "value": 32,
       "unit": "index (0-100)",
-      "timestamp": "2026-06-02T07:55:11.993874Z",
+      "timestamp": "2026-06-02T08:25:11.519776Z",
       "change_pct": null,
       "status": "ok"
     },
     "stock_nvda": {
       "value": 224.36,
       "unit": "USD",
-      "timestamp": "2026-06-02T07:55:13.252852Z",
-      "change_pct": 5.59,
+      "timestamp": "2026-06-02T08:25:12.607055Z",
+      "change_pct": 0.2,
       "status": "ok"
     },
     "stock_msft": {
       "value": 460.52,
       "unit": "USD",
-      "timestamp": "2026-06-02T07:55:13.252876Z",
-      "change_pct": 2.34,
+      "timestamp": "2026-06-02T08:25:12.607072Z",
+      "change_pct": 1.8,
       "status": "ok"
     },
     "stock_googl": {
       "value": 376.37,
       "unit": "USD",
-      "timestamp": "2026-06-02T07:55:13.252883Z",
-      "change_pct": -1.13,
+      "timestamp": "2026-06-02T08:25:12.607078Z",
+      "change_pct": 0.77,
       "status": "ok"
     },
     "stock_meta": {
       "value": 600.47,
       "unit": "USD",
-      "timestamp": "2026-06-02T07:55:13.252887Z",
-      "change_pct": -5.01,
+      "timestamp": "2026-06-02T08:25:12.607083Z",
+      "change_pct": -0.02,
       "status": "ok"
     },
     "stock_amzn": {
       "value": 261.26,
       "unit": "USD",
-      "timestamp": "2026-06-02T07:55:13.252892Z",
-      "change_pct": -3.42,
+      "timestamp": "2026-06-02T08:25:12.607087Z",
+      "change_pct": 0.62,
       "status": "ok"
     },
     "api_pricing_snapshot": {
-  "value": "OpenAI · Anthropic · Google",
-  "unit": "pricing pages monitored daily",
-  "timestamp": "2026-06-02T07:25:47.530253Z",
-  "change_pct": null,
-  "status": "ok"
-},
+      "value": "OpenAI \u00b7 Anthropic \u00b7 Google",
+      "unit": "",
+      "timestamp": "2026-06-02T08:25:12.832027Z",
+      "change_pct": null,
+      "status": "ok"
+    },
     "aa_inference_speed_tps": {
       "value": 414.2,
       "unit": "tokens/sec",
-      "timestamp": "2026-06-02T07:55:15.757225Z",
+      "timestamp": "2026-06-02T08:25:15.116703Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -129,12 +129,12 @@
       "status": "ok"
     },
     "api_pricing_log": {
-  "value": "OpenAI ✓  Google ✓  Anthropic ✗",
-  "unit": "pricing pages accessible",
-  "timestamp": "2026-06-02T07:27:50.875602Z",
-  "change_pct": null,
-  "status": "ok"
-},
+      "value": "OpenAI \u2713  Google \u2713  Anthropic \u2717",
+      "unit": "pricing pages accessible",
+      "timestamp": "2026-06-02T07:27:50.875602Z",
+      "change_pct": null,
+      "status": "ok"
+    },
     "inferencemax_efficiency": {
       "value": "live",
       "unit": "",
@@ -174,19 +174,19 @@
       "status": "ok"
     },
     "hyperscaler_capex_reported": {
-  "value": 266,
-  "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
-  "timestamp": "2026-06-02T07:29:11.064187Z",
-  "change_pct": 52.0,
-  "status": "ok"
-   },
+      "value": 266,
+      "unit": "USD billion (MSFT+AMZN+GOOGL+META 2025)",
+      "timestamp": "2026-06-02T07:29:11.064187Z",
+      "change_pct": 52.0,
+      "status": "ok"
+    },
     "cloud_revenue_growth": {
-  "value": 29,
-  "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
-  "timestamp": "2026-06-02T07:29:11.064199Z",
-  "change_pct": null,
-  "status": "ok"
-},
+      "value": 29,
+      "unit": "% YoY avg (AWS+Azure+GCP Q1 2026)",
+      "timestamp": "2026-06-02T07:29:11.064199Z",
+      "change_pct": null,
+      "status": "ok"
+    },
     "ai_server_backlog": {
       "value": {
         "DELL": {
