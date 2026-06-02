@@ -93,25 +93,50 @@ def fetch_api_pricing():
 
 def fetch_artificial_analysis_speed():
     try:
-        import os
-        print("  Fetching Artificial Analysis speed metrics...")
-        aa_key = os.getenv('AA_API_KEY')
-        if not aa_key:
-            print("    AA_API_KEY not set")
-            return None
+        from bs4 import BeautifulSoup
+        import re
+        print("  Fetching Artificial Analysis leaderboard...")
+        
         response = http_get(
-            'https://artificialanalysis.ai/api/v2/models',
-            headers={"x-api-key": aa_key},
+            'https://artificialanalysis.ai/leaderboards/models',
             timeout=15
         )
+        
         if not response:
             return None
-        data = response.json()
-        if 'data' not in data:
-            return None
-        models = sorted(data['data'], key=lambda x: x.get('median_output_tokens_per_second', 0), reverse=True)[:5]
-        top_speed = safe_float(models[0].get('median_output_tokens_per_second', 0))
-        return {"top_model_speed_tps": round(top_speed, 1), "models_tracked": len(data['data'])}
+        
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Look for speed numbers in the page
+        text = soup.get_text()
+        
+        # Find tokens per second values
+        matches = re.findall(r'(\d+(?:\.\d+)?)\s*(?:tok/s|tokens/s|t/s)', text, re.IGNORECASE)
+        
+        if not matches:
+            # Try finding any speed-related numbers
+            matches = re.findall(r'(\d+(?:\.\d+)?)\s*tokens per second', text, re.IGNORECASE)
+        
+        if matches:
+            speeds = [float(m) for m in matches[:10]]
+            top_speed = max(speeds)
+            avg_speed = sum(speeds) / len(speeds)
+            return {
+                "top_model_speed_tps": round(top_speed, 1),
+                "avg_speed_tps": round(avg_speed, 1),
+                "models_sampled": len(speeds)
+            }
+        
+        # If we can't parse speeds, at least confirm site is live
+        if 'model' in text.lower() and 'speed' in text.lower():
+            return {
+                "top_model_speed_tps": None,
+                "status": "live_but_unparseable",
+                "url": "https://artificialanalysis.ai/leaderboards/models"
+            }
+        
+        return None
+    
     except Exception as e:
         print(f"  Error: {str(e)}")
         return None
