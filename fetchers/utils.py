@@ -8,6 +8,16 @@ import time
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 DATA_FILE = DATA_DIR / "kpis.json"
+HISTORY_FILE = DATA_DIR / "kpis-history.json"
+
+TRACKED_HISTORY_KPIS = [
+    "ai_job_postings",
+    "tsmc_monthly_revenue",
+    "hyperscaler_capex_reported",
+    "hbm_spot_price",
+    "github_ai_stars_top10",
+    "fred_semi_index"
+]
 
 def ensure_data_dir():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -19,11 +29,44 @@ def load_kpis():
             return json.load(f)
     return {"meta": {"last_update": None, "frequency_last_run": {"daily": None, "weekly": None, "monthly": None, "quarterly": None}}, "kpis": {}, "errors": []}
 
+def load_history():
+    ensure_data_dir()
+    if HISTORY_FILE.exists():
+        with open(HISTORY_FILE, 'r') as f:
+            return json.load(f)
+    return {kpi: [] for kpi in TRACKED_HISTORY_KPIS}
+
+def save_history(history):
+    ensure_data_dir()
+    with open(HISTORY_FILE, 'w') as f:
+        json.dump(history, f, indent=2)
+
+def append_history(data):
+    history = load_history()
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    for kpi_name in TRACKED_HISTORY_KPIS:
+        kpi = data.get("kpis", {}).get(kpi_name)
+        if not kpi or kpi.get("value") is None:
+            continue
+        if isinstance(kpi["value"], (int, float)):
+            if kpi_name not in history:
+                history[kpi_name] = []
+            existing_dates = [p["date"] for p in history[kpi_name]]
+            if today not in existing_dates:
+                history[kpi_name].append({
+                    "date": today,
+                    "value": kpi["value"],
+                    "change_pct": kpi.get("change_pct")
+                })
+                history[kpi_name] = history[kpi_name][-24:]
+    save_history(history)
+
 def save_kpis(data):
     ensure_data_dir()
     data["meta"]["last_update"] = datetime.utcnow().isoformat() + "Z"
     with open(DATA_FILE, 'w') as f:
         json.dump(data, f, indent=2)
+    append_history(data)
 
 def update_kpi(data, kpi_name, value, unit="", change_pct=None, status="ok"):
     if "kpis" not in data:
@@ -77,6 +120,4 @@ def update_frequency_timestamp(data, frequency):
     data["meta"]["frequency_last_run"][frequency] = datetime.utcnow().isoformat() + "Z"
 
 def print_summary(data, frequency):
-    errors = data.get("errors", [])
-    recent_errors = [e for e in errors if frequency in str(e.get("timestamp", ""))]
     print(f"Update complete for {frequency.upper()} tier at {data['meta']['last_update']}")
