@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-06-02T06:33:14.656875Z",
+    "last_update": "2026-06-02T06:39:16.193598Z",
     "frequency_last_run": {
       "daily": "2026-06-02T06:20:39.233150Z",
       "weekly": "2026-06-02T06:24:05.876645Z",
-      "monthly": "2026-06-02T06:33:14.656833Z",
+      "monthly": "2026-06-02T06:39:16.193560Z",
       "quarterly": "2026-06-02T06:04:43.766973Z"
     }
   },
@@ -104,25 +104,25 @@
       "status": "pending"
     },
     "tsmc_3nm_wafer_price": {
-  "value": 19500,
-  "unit": "USD",
-  "timestamp": "2026-06-02T06:00:00Z",
-  "change_pct": 4.0,
-  "status": "ok"
-   },
-"hbm_spot_price": {
-  "value": 350,
-  "unit": "USD per stack",
-  "timestamp": "2026-06-02T06:00:00Z",
-  "change_pct": null,
-  "status": "ok"
-   },
-"cowos_utilization": {
-  "value": 55,
-  "unit": "%",
-  "timestamp": "2026-06-02T06:00:00Z",
-  "change_pct": null,
-  "status": "ok"
+      "value": 19500,
+      "unit": "USD",
+      "timestamp": "2026-06-02T06:00:00Z",
+      "change_pct": 4.0,
+      "status": "ok"
+    },
+    "hbm_spot_price": {
+      "value": 350,
+      "unit": "USD per stack",
+      "timestamp": "2026-06-02T06:00:00Z",
+      "change_pct": null,
+      "status": "ok"
+    },
+    "cowos_utilization": {
+      "value": 55,
+      "unit": "%",
+      "timestamp": "2026-06-02T06:00:00Z",
+      "change_pct": null,
+      "status": "ok"
     },
     "fred_semi_index": {
       "value": null,
@@ -136,7 +136,7 @@
         "OpenAI": {
           "url": "https://openai.com/api/pricing/",
           "status": "accessible",
-          "checked_at": "2026-06-02T06:33:10.218203Z"
+          "checked_at": "2026-06-02T06:39:11.921578Z"
         },
         "Anthropic": {
           "status": "error"
@@ -144,11 +144,11 @@
         "Google": {
           "url": "https://ai.google.dev/pricing",
           "status": "accessible",
-          "checked_at": "2026-06-02T06:33:14.076561Z"
+          "checked_at": "2026-06-02T06:39:15.798570Z"
         }
       },
       "unit": "snapshot",
-      "timestamp": "2026-06-02T06:33:14.077411Z",
+      "timestamp": "2026-06-02T06:39:15.799353Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -415,6 +415,21 @@
       "kpi": "inferencemax",
       "error": "Failed to fetch",
       "timestamp": "2026-06-02T06:33:14.656819Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T06:39:10.919235Z"
+    },
+    {
+      "kpi": "fred_semi_index",
+      "error": "API key missing or error",
+      "timestamp": "2026-06-02T06:39:11.452495Z"
+    },
+    {
+      "kpi": "inferencemax",
+      "error": "Failed to fetch",
+      "timestamp": "2026-06-02T06:39:16.193550Z"
     }
   ]
 }
