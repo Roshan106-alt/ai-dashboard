@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-02T06:03:39.729815Z",
+    "last_update": "2026-06-02T06:04:43.767028Z",
     "frequency_last_run": {
       "daily": "2026-06-02T06:02:29.011133Z",
       "weekly": "2026-06-02T06:03:39.729767Z",
       "monthly": "2026-06-02T06:00:58.706760Z",
-      "quarterly": "2026-06-02T05:52:19.312954Z"
+      "quarterly": "2026-06-02T06:04:43.766973Z"
     }
   },
   "kpis": {
@@ -193,7 +193,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T05:52:19.312918Z",
+      "timestamp": "2026-06-02T06:04:43.766937Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -210,7 +210,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T05:52:19.312930Z",
+      "timestamp": "2026-06-02T06:04:43.766949Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,7 +230,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T05:52:19.312942Z",
+      "timestamp": "2026-06-02T06:04:43.766962Z",
       "change_pct": null,
       "status": "ok"
     }
@@ -385,6 +385,16 @@
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
       "timestamp": "2026-06-02T06:03:39.633946Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-06-02T06:04:40.607990Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-06-02T06:04:43.766915Z"
     }
   ]
 }
