@@ -68,18 +68,17 @@ def fetch_ai_stock_prices():
 
 
 def fetch_api_pricing():
-    """Fetch current AI API pricing from usagepricing.com (simplified HTML parse)."""
     try:
         from bs4 import BeautifulSoup
-        
         print("  Fetching API pricing snapshot...")
         response = http_get('https://usagepricing.com/ai-token-pricing')
-        
         if not response:
             return None
-        
         print("    Pricing pages checked")
         return "OpenAI · Anthropic · Google"
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return None
 
 
 def fetch_artificial_analysis_speed():
