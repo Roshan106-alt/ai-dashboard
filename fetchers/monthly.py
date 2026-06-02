@@ -229,28 +229,36 @@ def fetch_api_pricing_log():
 
 
 def fetch_inferencemax_efficiency():
-    """Fetch InferenceMAX dashboard data — tokens per dollar, tokens per watt."""
     try:
+        import re
         from bs4 import BeautifulSoup
+        print("  Fetching InferenceX (formerly InferenceMAX) metrics...")
         
-        print("  Fetching InferenceMAX efficiency metrics...")
-        
-        response = http_get("https://inferencemax.ai", timeout=15)
+        response = http_get("https://inferencex.semianalysis.com/", timeout=15)
         
         if not response:
             return None
         
-        soup = BeautifulSoup(response.content, 'html.parser')
+        text = response.text
         
-        if 'tokens' in response.text.lower() and 'efficiency' in response.text.lower():
-            return {
-                "status": "live",
-                "url": "https://inferencemax.ai",
-                "metrics": "tokens_per_dollar, tokens_per_watt, tco_analysis",
-                "last_checked": datetime.utcnow().isoformat() + "Z"
-            }
+        # Look for tokens per second or cost metrics
+        tps_match = re.search(r'(\d{2,3},\d{3})\s*tokens per second', text, re.IGNORECASE)
+        cost_match = re.search(r'\$?([\d.]+)\s*(?:per|/)\s*million tokens', text, re.IGNORECASE)
         
-        return None
+        result = {
+            "status": "live",
+            "url": "https://inferencex.semianalysis.com",
+            "note": "InferenceMAX renamed to InferenceX by SemiAnalysis",
+            "last_checked": datetime.utcnow().isoformat() + "Z"
+        }
+        
+        if tps_match:
+            result["top_throughput_tps"] = int(tps_match.group(1).replace(',', ''))
+        
+        if cost_match:
+            result["cost_per_million_tokens"] = float(cost_match.group(1))
+        
+        return result
     
     except Exception as e:
         print(f"  Error: {str(e)}")
