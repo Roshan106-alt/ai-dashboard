@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-06-02T09:21:46.752763Z",
+    "last_update": "2026-06-02T09:22:45.420121Z",
     "frequency_last_run": {
       "daily": "2026-06-02T09:19:57.931617Z",
-      "weekly": "2026-06-02T08:46:11.961593Z",
+      "weekly": "2026-06-02T09:22:45.420058Z",
       "monthly": "2026-06-02T09:20:53.126702Z",
       "quarterly": "2026-06-02T09:21:46.752671Z"
     }
@@ -66,30 +66,30 @@
       "status": "ok"
     },
     "github_ai_stars_top10": {
-      "value": 1311799,
+      "value": 1311867,
       "unit": "stars",
-      "timestamp": "2026-06-02T08:46:11.191843Z",
+      "timestamp": "2026-06-02T09:22:44.557724Z",
       "change_pct": null,
       "status": "ok"
     },
     "huggingface_downloads_top20": {
       "value": 855642032,
       "unit": "downloads",
-      "timestamp": "2026-06-02T08:46:11.313604Z",
+      "timestamp": "2026-06-02T09:22:44.708062Z",
       "change_pct": null,
       "status": "ok"
     },
     "ai_job_postings": {
-      "value": 12679,
+      "value": 12680,
       "unit": "postings",
-      "timestamp": "2026-06-02T08:46:11.723323Z",
+      "timestamp": "2026-06-02T09:22:45.160828Z",
       "change_pct": null,
       "status": "ok"
     },
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-06-02T08:46:11.961581Z",
+      "timestamp": "2026-06-02T09:22:45.420047Z",
       "change_pct": null,
       "status": "ok"
     },
