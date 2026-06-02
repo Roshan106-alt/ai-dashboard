@@ -304,7 +304,6 @@
   "change_pct": 93.0,
   "status": "ok"
     },
-    {
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
       "timestamp": "2026-06-01T14:31:41.576891Z"
