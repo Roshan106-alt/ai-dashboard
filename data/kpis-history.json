@@ -74,6 +74,11 @@
       "date": "2026-06-08",
       "value": 12850,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-09",
+      "value": 12850,
+      "change_pct": null
     }
   ],
   "tsmc_monthly_revenue": [
@@ -131,6 +136,11 @@
       "date": "2026-06-08",
       "value": 410.73,
       "change_pct": -1.1
+    },
+    {
+      "date": "2026-06-09",
+      "value": 410.73,
+      "change_pct": -1.1
     }
   ],
   "hyperscaler_capex_reported": [
@@ -176,6 +186,11 @@
     },
     {
       "date": "2026-06-08",
+      "value": 266,
+      "change_pct": 52.0
+    },
+    {
+      "date": "2026-06-09",
       "value": 266,
       "change_pct": 52.0
     }
@@ -255,6 +270,11 @@
       "date": "2026-06-08",
       "value": 350,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-09",
+      "value": 350,
+      "change_pct": null
     }
   ],
   "github_ai_stars_top10": [
@@ -330,6 +350,11 @@
     },
     {
       "date": "2026-06-08",
+      "value": 1329143,
+      "change_pct": null
+    },
+    {
+      "date": "2026-06-09",
       "value": 1329143,
       "change_pct": null
     }
@@ -412,6 +437,11 @@
     },
     {
       "date": "2026-06-08",
+      "value": 178.2297,
+      "change_pct": 1.01
+    },
+    {
+      "date": "2026-06-09",
       "value": 178.2297,
       "change_pct": 1.01
     }
