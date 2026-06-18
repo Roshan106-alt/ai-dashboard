@@ -1,11 +1,6 @@
 {
   "ai_job_postings": [
     {
-      "date": "2025-10-01",
-      "value": 8200,
-      "change_pct": null
-    },
-    {
       "date": "2025-11-01",
       "value": 8950,
       "change_pct": 9.1
@@ -119,6 +114,11 @@
       "date": "2026-06-17",
       "value": 13359,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-18",
+      "value": 13359,
+      "change_pct": null
     }
   ],
   "tsmc_monthly_revenue": [
@@ -221,6 +221,11 @@
       "date": "2026-06-17",
       "value": 410.73,
       "change_pct": -1.1
+    },
+    {
+      "date": "2026-06-18",
+      "value": 410.73,
+      "change_pct": -1.1
     }
   ],
   "hyperscaler_capex_reported": [
@@ -313,14 +318,14 @@
       "date": "2026-06-17",
       "value": 266,
       "change_pct": 52.0
+    },
+    {
+      "date": "2026-06-18",
+      "value": 266,
+      "change_pct": 52.0
     }
   ],
   "hbm_spot_price": [
-    {
-      "date": "2025-10-01",
-      "value": 420,
-      "change_pct": null
-    },
     {
       "date": "2025-11-01",
       "value": 410,
@@ -435,14 +440,14 @@
       "date": "2026-06-17",
       "value": 350,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-18",
+      "value": 350,
+      "change_pct": null
     }
   ],
   "github_ai_stars_top10": [
-    {
-      "date": "2025-10-01",
-      "value": 980000,
-      "change_pct": null
-    },
     {
       "date": "2025-11-01",
       "value": 1020000,
@@ -557,14 +562,14 @@
       "date": "2026-06-17",
       "value": 1344942,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-18",
+      "value": 1344942,
+      "change_pct": null
     }
   ],
   "fred_semi_index": [
-    {
-      "date": "2025-08-01",
-      "value": 164.1,
-      "change_pct": 1.0
-    },
     {
       "date": "2025-09-01",
       "value": 165.8,
@@ -677,6 +682,11 @@
     },
     {
       "date": "2026-06-17",
+      "value": 178.2297,
+      "change_pct": 1.01
+    },
+    {
+      "date": "2026-06-18",
       "value": 178.2297,
       "change_pct": 1.01
     }
