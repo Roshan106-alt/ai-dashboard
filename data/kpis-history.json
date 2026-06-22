@@ -1,11 +1,6 @@
 {
   "ai_job_postings": [
     {
-      "date": "2026-02-01",
-      "value": 10500,
-      "change_pct": 7.1
-    },
-    {
       "date": "2026-03-01",
       "value": 11200,
       "change_pct": 6.7
@@ -119,14 +114,14 @@
       "date": "2026-06-21",
       "value": 13359,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-22",
+      "value": 13359,
+      "change_pct": null
     }
   ],
   "tsmc_monthly_revenue": [
-    {
-      "date": "2026-01-01",
-      "value": 401.26,
-      "change_pct": 19.8
-    },
     {
       "date": "2026-02-01",
       "value": 317.66,
@@ -241,6 +236,11 @@
       "date": "2026-06-21",
       "value": 410.73,
       "change_pct": -1.1
+    },
+    {
+      "date": "2026-06-22",
+      "value": 410.73,
+      "change_pct": -1.1
     }
   ],
   "hyperscaler_capex_reported": [
@@ -353,14 +353,14 @@
       "date": "2026-06-21",
       "value": 266,
       "change_pct": 52.0
+    },
+    {
+      "date": "2026-06-22",
+      "value": 266,
+      "change_pct": 52.0
     }
   ],
   "hbm_spot_price": [
-    {
-      "date": "2026-02-01",
-      "value": 375,
-      "change_pct": -2.6
-    },
     {
       "date": "2026-03-01",
       "value": 362,
@@ -475,14 +475,14 @@
       "date": "2026-06-21",
       "value": 350,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-22",
+      "value": 350,
+      "change_pct": null
     }
   ],
   "github_ai_stars_top10": [
-    {
-      "date": "2026-02-01",
-      "value": 1210000,
-      "change_pct": 5.2
-    },
     {
       "date": "2026-03-01",
       "value": 1260000,
@@ -597,14 +597,14 @@
       "date": "2026-06-21",
       "value": 1344942,
       "change_pct": null
+    },
+    {
+      "date": "2026-06-22",
+      "value": 1344942,
+      "change_pct": null
     }
   ],
   "fred_semi_index": [
-    {
-      "date": "2025-12-01",
-      "value": 169.6,
-      "change_pct": -0.2
-    },
     {
       "date": "2026-01-01",
       "value": 174.9,
@@ -717,6 +717,11 @@
     },
     {
       "date": "2026-06-21",
+      "value": 178.2297,
+      "change_pct": 1.01
+    },
+    {
+      "date": "2026-06-22",
       "value": 178.2297,
       "change_pct": 1.01
     }
