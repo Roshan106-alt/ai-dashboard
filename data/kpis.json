@@ -1,11 +1,11 @@
 {
   "meta": {
-    "last_update": "2026-06-30T12:32:28.052641Z",
+    "last_update": "2026-07-01T13:57:19.383622Z",
     "frequency_last_run": {
       "daily": "2026-06-30T12:32:28.052586Z",
       "weekly": "2026-06-29T17:13:24.554274Z",
       "monthly": "2026-06-02T12:06:22.055905Z",
-      "quarterly": "2026-06-02T12:08:05.538846Z"
+      "quarterly": "2026-07-01T13:57:19.383591Z"
     }
   },
   "kpis": {
@@ -203,7 +203,7 @@
         }
       },
       "unit": "",
-      "timestamp": "2026-06-02T12:08:05.538833Z",
+      "timestamp": "2026-07-01T13:57:19.383579Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,26 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "aa_inference_speed",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-02T06:02:29.011115Z"
-    },
-    {
-      "kpi": "ai_job_postings",
-      "error": "Failed to fetch (Indeed blocks scrapers)",
-      "timestamp": "2026-06-02T06:03:39.633946Z"
-    },
-    {
-      "kpi": "hyperscaler_capex_guidance",
-      "error": "SEC EDGAR parsing incomplete",
-      "timestamp": "2026-06-02T06:04:40.607990Z"
-    },
-    {
-      "kpi": "nvidia_dc_revenue",
-      "error": "SEC EDGAR fetch incomplete",
-      "timestamp": "2026-06-02T06:04:43.766915Z"
-    },
     {
       "kpi": "ai_job_postings",
       "error": "Failed to fetch (Indeed blocks scrapers)",
@@ -479,6 +459,26 @@
       "kpi": "google_trends_ai",
       "error": "Failed to fetch (pytrends error)",
       "timestamp": "2026-06-30T12:32:22.563197Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_guidance",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-07-01T13:57:15.937692Z"
+    },
+    {
+      "kpi": "nvidia_dc_revenue",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-07-01T13:57:19.383554Z"
+    },
+    {
+      "kpi": "hyperscaler_capex_reported",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-07-01T13:57:19.383566Z"
+    },
+    {
+      "kpi": "cloud_revenue_growth",
+      "error": "SEC EDGAR fetch incomplete",
+      "timestamp": "2026-07-01T13:57:19.383571Z"
     }
   ]
 }
