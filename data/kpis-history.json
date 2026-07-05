@@ -1,11 +1,6 @@
 {
   "ai_job_postings": [
     {
-      "date": "2026-06-11",
-      "value": 12850,
-      "change_pct": null
-    },
-    {
       "date": "2026-06-12",
       "value": 12850,
       "change_pct": null
@@ -117,17 +112,17 @@
     },
     {
       "date": "2026-07-04",
+      "value": 13013,
+      "change_pct": null
+    },
+    {
+      "date": "2026-07-05",
       "value": 13013,
       "change_pct": null
     }
   ],
   "tsmc_monthly_revenue": [
     {
-      "date": "2026-06-11",
-      "value": 410.73,
-      "change_pct": -1.1
-    },
-    {
       "date": "2026-06-12",
       "value": 410.73,
       "change_pct": -1.1
@@ -239,17 +234,17 @@
     },
     {
       "date": "2026-07-04",
+      "value": 410.73,
+      "change_pct": -1.1
+    },
+    {
+      "date": "2026-07-05",
       "value": 410.73,
       "change_pct": -1.1
     }
   ],
   "hyperscaler_capex_reported": [
     {
-      "date": "2026-06-11",
-      "value": 266,
-      "change_pct": 52.0
-    },
-    {
       "date": "2026-06-12",
       "value": 266,
       "change_pct": 52.0
@@ -361,17 +356,17 @@
     },
     {
       "date": "2026-07-04",
+      "value": 266,
+      "change_pct": 52.0
+    },
+    {
+      "date": "2026-07-05",
       "value": 266,
       "change_pct": 52.0
     }
   ],
   "hbm_spot_price": [
     {
-      "date": "2026-06-11",
-      "value": 350,
-      "change_pct": null
-    },
-    {
       "date": "2026-06-12",
       "value": 350,
       "change_pct": null
@@ -483,17 +478,17 @@
     },
     {
       "date": "2026-07-04",
+      "value": 350,
+      "change_pct": null
+    },
+    {
+      "date": "2026-07-05",
       "value": 350,
       "change_pct": null
     }
   ],
   "github_ai_stars_top10": [
     {
-      "date": "2026-06-11",
-      "value": 1329143,
-      "change_pct": null
-    },
-    {
       "date": "2026-06-12",
       "value": 1329143,
       "change_pct": null
@@ -605,17 +600,17 @@
     },
     {
       "date": "2026-07-04",
+      "value": 1379083,
+      "change_pct": null
+    },
+    {
+      "date": "2026-07-05",
       "value": 1379083,
       "change_pct": null
     }
   ],
   "fred_semi_index": [
     {
-      "date": "2026-06-11",
-      "value": 178.2297,
-      "change_pct": 1.01
-    },
-    {
       "date": "2026-06-12",
       "value": 178.2297,
       "change_pct": 1.01
@@ -727,6 +722,11 @@
     },
     {
       "date": "2026-07-04",
+      "value": 188.0105,
+      "change_pct": 2.4
+    },
+    {
+      "date": "2026-07-05",
       "value": 188.0105,
       "change_pct": 2.4
     }
