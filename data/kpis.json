@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-07-06T10:06:12.145254Z",
+    "last_update": "2026-07-06T17:17:07.387834Z",
     "frequency_last_run": {
       "daily": "2026-07-06T10:06:12.145207Z",
-      "weekly": "2026-06-29T17:13:24.554274Z",
+      "weekly": "2026-07-06T17:17:07.387801Z",
       "monthly": "2026-07-01T14:00:46.123582Z",
       "quarterly": "2026-07-01T13:57:19.383591Z"
     }
@@ -73,23 +73,23 @@
       "status": "ok"
     },
     "huggingface_downloads_top20": {
-      "value": 818609874,
+      "value": 834416136,
       "unit": "downloads",
-      "timestamp": "2026-06-29T17:13:23.906367Z",
+      "timestamp": "2026-07-06T17:17:06.595425Z",
       "change_pct": null,
       "status": "ok"
     },
     "ai_job_postings": {
-      "value": 13013,
+      "value": 14494,
       "unit": "postings",
-      "timestamp": "2026-06-29T17:13:24.368889Z",
+      "timestamp": "2026-07-06T17:17:07.218452Z",
       "change_pct": null,
       "status": "ok"
     },
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-06-29T17:13:24.554261Z",
+      "timestamp": "2026-07-06T17:17:07.387791Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,11 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "inferencemax",
-      "error": "Failed to fetch",
-      "timestamp": "2026-06-02T06:33:14.656819Z"
-    },
     {
       "kpi": "tsmc_revenue",
       "error": "SEC EDGAR parsing incomplete",
@@ -479,6 +474,11 @@
       "kpi": "google_trends_ai",
       "error": "Failed to fetch (pytrends error)",
       "timestamp": "2026-07-06T10:06:09.482941Z"
+    },
+    {
+      "kpi": "github_ai_repos",
+      "error": "Failed to fetch",
+      "timestamp": "2026-07-06T17:17:06.477067Z"
     }
   ]
 }
