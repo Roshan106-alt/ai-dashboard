@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-07-28T08:23:55.614561Z",
+    "last_update": "2026-07-29T08:29:53.916033Z",
     "frequency_last_run": {
-      "daily": "2026-07-28T08:23:55.614514Z",
+      "daily": "2026-07-29T08:29:53.915977Z",
       "weekly": "2026-07-27T09:01:00.917637Z",
       "monthly": "2026-07-01T14:00:46.123582Z",
       "quarterly": "2026-07-01T13:57:19.383591Z"
@@ -17,38 +17,38 @@
       "status": "ok"
     },
     "stock_nvda": {
-      "value": 196.51,
+      "value": 197.01,
       "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955706Z",
-      "change_pct": 0.19,
-      "status": "ok"
-    },
-    "stock_msft": {
-      "value": 389.1,
-      "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955725Z",
-      "change_pct": -0.1,
-      "status": "ok"
-    },
-    "stock_googl": {
-      "value": 326.56,
-      "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955733Z",
-      "change_pct": -0.13,
-      "status": "ok"
-    },
-    "stock_meta": {
-      "value": 593.87,
-      "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955738Z",
+      "timestamp": "2026-07-29T08:29:49.630027Z",
       "change_pct": -0.31,
       "status": "ok"
     },
-    "stock_amzn": {
-      "value": 231.39,
+    "stock_msft": {
+      "value": 393.35,
       "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955743Z",
-      "change_pct": -0.06,
+      "timestamp": "2026-07-29T08:29:49.630047Z",
+      "change_pct": -0.54,
+      "status": "ok"
+    },
+    "stock_googl": {
+      "value": 333.71,
+      "unit": "USD",
+      "timestamp": "2026-07-29T08:29:49.630054Z",
+      "change_pct": -0.65,
+      "status": "ok"
+    },
+    "stock_meta": {
+      "value": 593.41,
+      "unit": "USD",
+      "timestamp": "2026-07-29T08:29:49.630060Z",
+      "change_pct": -0.66,
+      "status": "ok"
+    },
+    "stock_amzn": {
+      "value": 230.86,
+      "unit": "USD",
+      "timestamp": "2026-07-29T08:29:49.630064Z",
+      "change_pct": -0.51,
       "status": "ok"
     },
     "api_pricing_snapshot": {
@@ -59,9 +59,9 @@
       "status": "ok"
     },
     "aa_inference_speed_tps": {
-      "value": 428.3,
+      "value": 409.8,
       "unit": "tokens/sec",
-      "timestamp": "2026-07-28T08:23:55.614493Z",
+      "timestamp": "2026-07-29T08:29:53.915952Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -208,38 +208,28 @@
       "status": "ok"
     },
     "stock_smci": {
-      "value": 29.81,
+      "value": 28.45,
       "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955747Z",
-      "change_pct": 1.02,
+      "timestamp": "2026-07-29T08:29:49.630068Z",
+      "change_pct": -0.32,
       "status": "ok"
     },
     "stock_dell": {
-      "value": 426.91,
+      "value": 392.1,
       "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955752Z",
-      "change_pct": 0.36,
+      "timestamp": "2026-07-29T08:29:49.630072Z",
+      "change_pct": 0.04,
       "status": "ok"
     },
     "stock_hpe": {
-      "value": 48.19,
+      "value": 45.59,
       "unit": "USD",
-      "timestamp": "2026-07-28T08:23:51.955759Z",
-      "change_pct": 0.37,
+      "timestamp": "2026-07-29T08:29:49.630080Z",
+      "change_pct": -0.02,
       "status": "ok"
     }
   },
   "errors": [
-    {
-      "kpi": "google_trends_ai",
-      "error": "Failed to fetch (pytrends error)",
-      "timestamp": "2026-06-08T17:36:59.657651Z"
-    },
-    {
-      "kpi": "google_trends_ai",
-      "error": "Failed to fetch (pytrends error)",
-      "timestamp": "2026-06-09T16:19:47.875034Z"
-    },
     {
       "kpi": "google_trends_ai",
       "error": "Failed to fetch (pytrends error)",
@@ -479,6 +469,16 @@
       "kpi": "api_pricing_snapshot",
       "error": "Failed to fetch",
       "timestamp": "2026-07-28T08:23:55.120052Z"
+    },
+    {
+      "kpi": "google_trends_ai",
+      "error": "Failed to fetch (pytrends error)",
+      "timestamp": "2026-07-29T08:29:46.591375Z"
+    },
+    {
+      "kpi": "api_pricing_snapshot",
+      "error": "Failed to fetch",
+      "timestamp": "2026-07-29T08:29:53.099264Z"
     }
   ]
 }
