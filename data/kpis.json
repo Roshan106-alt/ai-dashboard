@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-08-19T06:33:23.897200Z",
+    "last_update": "2026-08-20T06:35:36.607351Z",
     "frequency_last_run": {
-      "daily": "2026-08-19T06:33:23.897153Z",
+      "daily": "2026-08-20T06:35:36.607307Z",
       "weekly": "2026-08-17T06:25:37.162167Z",
       "monthly": "2026-08-01T08:00:28.341716Z",
       "quarterly": "2026-07-01T13:57:19.383591Z"
@@ -10,45 +10,45 @@
   },
   "kpis": {
     "google_trends_ai": {
-      "value": 35,
+      "value": 25,
       "unit": "index (0-100)",
-      "timestamp": "2026-08-19T06:33:16.988163Z",
+      "timestamp": "2026-08-20T06:35:30.757303Z",
       "change_pct": null,
       "status": "ok"
     },
     "stock_nvda": {
-      "value": 219.74,
+      "value": 217.56,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215664Z",
-      "change_pct": -2.4,
+      "timestamp": "2026-08-20T06:35:32.902635Z",
+      "change_pct": -0.77,
       "status": "ok"
     },
     "stock_msft": {
-      "value": 481.63,
+      "value": 484.31,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215683Z",
-      "change_pct": 0.35,
+      "timestamp": "2026-08-20T06:35:32.902654Z",
+      "change_pct": 0.61,
       "status": "ok"
     },
     "stock_googl": {
-      "value": 344.2,
+      "value": 344.72,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215689Z",
-      "change_pct": 0.1,
+      "timestamp": "2026-08-20T06:35:32.902660Z",
+      "change_pct": 0.18,
       "status": "ok"
     },
     "stock_meta": {
-      "value": 543.67,
+      "value": 546.03,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215694Z",
-      "change_pct": -4.33,
+      "timestamp": "2026-08-20T06:35:32.902665Z",
+      "change_pct": 0.25,
       "status": "ok"
     },
     "stock_amzn": {
-      "value": 259.45,
+      "value": 265.84,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215698Z",
-      "change_pct": -0.63,
+      "timestamp": "2026-08-20T06:35:32.902670Z",
+      "change_pct": 2.44,
       "status": "ok"
     },
     "api_pricing_snapshot": {
@@ -59,9 +59,9 @@
       "status": "ok"
     },
     "aa_inference_speed_tps": {
-      "value": 835.0,
+      "value": 375.2,
       "unit": "tokens/sec",
-      "timestamp": "2026-08-19T06:33:23.897133Z",
+      "timestamp": "2026-08-20T06:35:36.607287Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -208,33 +208,28 @@
       "status": "ok"
     },
     "stock_smci": {
-      "value": 37.41,
+      "value": 36.58,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215701Z",
-      "change_pct": -1.86,
+      "timestamp": "2026-08-20T06:35:32.902674Z",
+      "change_pct": -1.16,
       "status": "ok"
     },
     "stock_dell": {
-      "value": 468.65,
+      "value": 437.55,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215705Z",
-      "change_pct": -2.06,
+      "timestamp": "2026-08-20T06:35:32.902679Z",
+      "change_pct": -5.27,
       "status": "ok"
     },
     "stock_hpe": {
-      "value": 55.69,
+      "value": 53.13,
       "unit": "USD",
-      "timestamp": "2026-08-19T06:33:20.215711Z",
-      "change_pct": -3.67,
+      "timestamp": "2026-08-20T06:35:32.902686Z",
+      "change_pct": -2.46,
       "status": "ok"
     }
   },
   "errors": [
-    {
-      "kpi": "api_pricing_snapshot",
-      "error": "Failed to fetch",
-      "timestamp": "2026-07-20T08:48:05.646844Z"
-    },
     {
       "kpi": "google_trends_ai",
       "error": "Failed to fetch (pytrends error)",
@@ -479,6 +474,11 @@
       "kpi": "api_pricing_snapshot",
       "error": "Failed to fetch",
       "timestamp": "2026-08-19T06:33:23.451650Z"
+    },
+    {
+      "kpi": "api_pricing_snapshot",
+      "error": "Failed to fetch",
+      "timestamp": "2026-08-20T06:35:36.053690Z"
     }
   ]
 }
