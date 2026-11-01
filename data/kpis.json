@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_update": "2026-10-31T11:33:12.894074Z",
+    "last_update": "2026-11-01T12:13:13.616394Z",
     "frequency_last_run": {
       "daily": "2026-10-31T11:33:12.894025Z",
       "weekly": "2026-10-26T11:37:19.965813Z",
-      "monthly": "2026-10-01T11:59:12.574589Z",
+      "monthly": "2026-11-01T12:13:13.616340Z",
       "quarterly": "2026-10-01T12:09:47.745382Z"
     }
   },
@@ -122,23 +122,23 @@
       "status": "ok"
     },
     "fred_semi_index": {
-      "value": 190.0987,
+      "value": 198.6335,
       "unit": "index",
-      "timestamp": "2026-10-01T11:59:11.260281Z",
-      "change_pct": -0.09,
+      "timestamp": "2026-11-01T12:13:11.903428Z",
+      "change_pct": 2.11,
       "status": "ok"
     },
     "api_pricing_log": {
       "value": "OpenAI \u2713  Anthropic \u2713  Google \u2713",
       "unit": "pricing pages",
-      "timestamp": "2026-10-01T11:59:12.375816Z",
+      "timestamp": "2026-11-01T12:13:13.276512Z",
       "change_pct": null,
       "status": "ok"
     },
     "inferencemax_efficiency": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-10-01T11:59:12.574575Z",
+      "timestamp": "2026-11-01T12:13:13.616325Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,11 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "github_ai_repos",
-      "error": "Failed to fetch",
-      "timestamp": "2026-09-28T12:05:03.392405Z"
-    },
     {
       "kpi": "api_pricing_snapshot",
       "error": "Failed to fetch",
@@ -479,6 +474,11 @@
       "kpi": "api_pricing_snapshot",
       "error": "Failed to fetch",
       "timestamp": "2026-10-31T11:33:12.245404Z"
+    },
+    {
+      "kpi": "tsmc_revenue",
+      "error": "SEC EDGAR parsing incomplete",
+      "timestamp": "2026-11-01T12:13:11.255182Z"
     }
   ]
 }
