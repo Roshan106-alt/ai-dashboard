@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-11-08T12:36:52.634566Z",
+    "last_update": "2026-11-09T14:27:20.633183Z",
     "frequency_last_run": {
       "daily": "2026-11-08T12:36:52.634512Z",
-      "weekly": "2026-11-02T13:55:56.254134Z",
+      "weekly": "2026-11-09T14:27:20.633131Z",
       "monthly": "2026-11-01T12:13:13.616340Z",
       "quarterly": "2026-10-01T12:09:47.745382Z"
     }
@@ -73,23 +73,23 @@
       "status": "ok"
     },
     "huggingface_downloads_top20": {
-      "value": 674315766,
+      "value": 685559427,
       "unit": "downloads",
-      "timestamp": "2026-11-02T13:55:55.716878Z",
+      "timestamp": "2026-11-09T14:27:20.089073Z",
       "change_pct": null,
       "status": "ok"
     },
     "ai_job_postings": {
-      "value": 20610,
+      "value": 21236,
       "unit": "postings",
-      "timestamp": "2026-11-02T13:55:56.052552Z",
+      "timestamp": "2026-11-09T14:27:20.467836Z",
       "change_pct": null,
       "status": "ok"
     },
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-11-02T13:55:56.254123Z",
+      "timestamp": "2026-11-09T14:27:20.633120Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,11 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "hyperscaler_capex_reported",
-      "error": "SEC EDGAR fetch incomplete",
-      "timestamp": "2026-10-01T12:09:47.745359Z"
-    },
     {
       "kpi": "cloud_revenue_growth",
       "error": "SEC EDGAR fetch incomplete",
@@ -479,6 +474,11 @@
       "kpi": "api_pricing_snapshot",
       "error": "Failed to fetch",
       "timestamp": "2026-11-05T13:51:28.940399Z"
+    },
+    {
+      "kpi": "github_ai_repos",
+      "error": "Failed to fetch",
+      "timestamp": "2026-11-09T14:27:19.980789Z"
     }
   ]
 }
