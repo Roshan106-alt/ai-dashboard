@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-11-14T12:51:10.105057Z",
+    "last_update": "2026-11-15T13:17:50.104641Z",
     "frequency_last_run": {
-      "daily": "2026-11-14T12:51:10.104998Z",
+      "daily": "2026-11-15T13:17:50.104591Z",
       "weekly": "2026-11-09T14:27:20.633131Z",
       "monthly": "2026-11-01T12:13:13.616340Z",
       "quarterly": "2026-10-01T12:09:47.745382Z"
@@ -10,58 +10,58 @@
   },
   "kpis": {
     "google_trends_ai": {
-      "value": 23,
+      "value": 34,
       "unit": "index (0-100)",
-      "timestamp": "2026-11-14T12:51:07.545324Z",
+      "timestamp": "2026-11-15T13:17:47.366570Z",
       "change_pct": null,
       "status": "ok"
     },
     "stock_nvda": {
       "value": 162.85,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.464963Z",
+      "timestamp": "2026-11-15T13:17:49.599141Z",
       "change_pct": -3.08,
       "status": "ok"
     },
     "stock_msft": {
       "value": 523.88,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.464982Z",
+      "timestamp": "2026-11-15T13:17:49.599163Z",
       "change_pct": 0.36,
       "status": "ok"
     },
     "stock_googl": {
       "value": 295.77,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.464988Z",
+      "timestamp": "2026-11-15T13:17:49.599167Z",
       "change_pct": -1.72,
       "status": "ok"
     },
     "stock_meta": {
       "value": 641.69,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.464992Z",
+      "timestamp": "2026-11-15T13:17:49.599170Z",
       "change_pct": 2.47,
       "status": "ok"
     },
     "stock_amzn": {
       "value": 266.66,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.464996Z",
+      "timestamp": "2026-11-15T13:17:49.599173Z",
       "change_pct": -0.62,
       "status": "ok"
     },
     "api_pricing_snapshot": {
       "value": "OpenAI \u00b7 Anthropic \u00b7 Google",
       "unit": "",
-      "timestamp": "2026-11-14T12:51:09.778479Z",
+      "timestamp": "2026-11-15T13:17:49.813455Z",
       "change_pct": null,
       "status": "ok"
     },
     "aa_inference_speed_tps": {
       "value": null,
       "unit": "tokens/sec",
-      "timestamp": "2026-11-14T12:51:10.104975Z",
+      "timestamp": "2026-11-15T13:17:50.104567Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -210,21 +210,21 @@
     "stock_smci": {
       "value": 26.87,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.465000Z",
+      "timestamp": "2026-11-15T13:17:49.599176Z",
       "change_pct": -2.68,
       "status": "ok"
     },
     "stock_dell": {
       "value": 344.53,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.465003Z",
+      "timestamp": "2026-11-15T13:17:49.599179Z",
       "change_pct": -9.2,
       "status": "ok"
     },
     "stock_hpe": {
       "value": 48.29,
       "unit": "USD",
-      "timestamp": "2026-11-14T12:51:09.465009Z",
+      "timestamp": "2026-11-15T13:17:49.599185Z",
       "change_pct": -5.5,
       "status": "ok"
     }
