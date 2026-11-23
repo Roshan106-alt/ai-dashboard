@@ -1,9 +1,9 @@
 {
   "meta": {
-    "last_update": "2026-11-22T13:54:48.807657Z",
+    "last_update": "2026-11-23T16:35:32.618267Z",
     "frequency_last_run": {
       "daily": "2026-11-22T13:54:48.807610Z",
-      "weekly": "2026-11-16T14:04:05.933392Z",
+      "weekly": "2026-11-23T16:35:32.618220Z",
       "monthly": "2026-11-01T12:13:13.616340Z",
       "quarterly": "2026-10-01T12:09:47.745382Z"
     }
@@ -73,23 +73,23 @@
       "status": "ok"
     },
     "huggingface_downloads_top20": {
-      "value": 699286822,
+      "value": 726916150,
       "unit": "downloads",
-      "timestamp": "2026-11-16T14:04:04.793570Z",
+      "timestamp": "2026-11-23T16:35:31.887169Z",
       "change_pct": null,
       "status": "ok"
     },
     "ai_job_postings": {
-      "value": 21762,
+      "value": 20547,
       "unit": "postings",
-      "timestamp": "2026-11-16T14:04:05.730408Z",
+      "timestamp": "2026-11-23T16:35:32.434891Z",
       "change_pct": null,
       "status": "ok"
     },
     "openrouter_throughput_status": {
       "value": "live",
       "unit": "",
-      "timestamp": "2026-11-16T14:04:05.933386Z",
+      "timestamp": "2026-11-23T16:35:32.618209Z",
       "change_pct": null,
       "status": "ok"
     },
@@ -230,11 +230,6 @@
     }
   },
   "errors": [
-    {
-      "kpi": "api_pricing_snapshot",
-      "error": "Failed to fetch",
-      "timestamp": "2026-10-01T12:15:07.646480Z"
-    },
     {
       "kpi": "google_trends_ai",
       "error": "Failed to fetch (pytrends error)",
@@ -479,6 +474,11 @@
       "kpi": "github_ai_repos",
       "error": "Failed to fetch",
       "timestamp": "2026-11-16T14:04:04.696515Z"
+    },
+    {
+      "kpi": "github_ai_repos",
+      "error": "Failed to fetch",
+      "timestamp": "2026-11-23T16:35:31.833944Z"
     }
   ]
 }
